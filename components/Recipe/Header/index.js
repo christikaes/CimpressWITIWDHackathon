@@ -5,7 +5,7 @@ import { update } from '../../../actions'
 import ContentEditable from 'react-contenteditable'
 import styles from './styles.css'
 
-var Header = React.createClass({
+const Header = React.createClass({
 
   updateTitle: function(evt){
     const {update} = this.props;

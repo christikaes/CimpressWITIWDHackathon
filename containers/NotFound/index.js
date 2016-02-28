@@ -1,11 +1,13 @@
-import React, { Component, PropTypes } from 'react'
+import React from 'react'
 
-export default class NotFound extends Component {
-  render() {
+const NotFound = React.createClass({
+  render: function() {
     return (
       <div>
         <h1>NotFound</h1>
       </div>
     )
   }
-}
+})
+
+export default NotFound;

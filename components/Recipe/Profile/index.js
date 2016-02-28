@@ -1,50 +1,40 @@
 import React, { Component, PropTypes, setState } from 'react'
 import {bindActionCreators} from 'redux'
 import { connect } from 'react-redux'
-import { save, update } from '../../../actions'
+import { update } from '../../../actions'
+import ContentEditable from 'react-contenteditable'
 
-class Profile extends Component {
+const Profile = React.createClass({
 
-  render() {
-    const {save, update, recipe} = this.props
-    let num =  recipe.x ? recipe.x + 1 : 1;
+  updateName: function(evt){
+    const {update} = this.props;
+    update("fullName", evt.target.value);
+  },
 
-    return (
+  render: function(){
+    const {recipe} = this.props;
+    return(
       <div>
-        <div className="profile">
-            <div className="profile-info">
-              <div className="name" > Full Name </div>
-              <div className="company" > Company, City </div>
-            </div>
-            <div className="profile-picture">
-              <div className="picture"></div>
-            </div>
-        </div>
-
-  	    <button onClick={update.bind(this, num)}>
-  	      Update
-  	    </button>
-      </div>
-    )
+        <ContentEditable html={recipe.fullName} disabled={false} onChange={this.updateName} />
+      </div>) 
   }
-}
+});
 
 Profile.propTypes = {
-  save: PropTypes.func.isRequired
+  update: PropTypes.func.isRequired
 }
 
 const mapStateToProps = (state) => {
   return {
-  	// TODO: Could there be bugs here?
     recipe: state.recipe.present
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
-  return bindActionCreators({ save, update }, dispatch);
+  return bindActionCreators({ update }, dispatch);
 }
 
 export default connect(
-	mapStateToProps,
-	mapDispatchToProps
+  mapStateToProps,
+  mapDispatchToProps
 )(Profile)

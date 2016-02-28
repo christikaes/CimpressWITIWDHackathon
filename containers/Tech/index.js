@@ -1,11 +1,13 @@
-import React, { Component, PropTypes } from 'react'
+import React from 'react'
 
-export default class Tech extends Component {
-  render() {
+const Tech = React.createClass({
+  render: function() {
     return (
       <div>
         <h1>Tech</h1>
       </div>
     )
   }
-}
+})
+
+export default Tech;

@@ -4,20 +4,20 @@ import { NavBar } from '../../components'
 
 import AddTodo from '../AddTodo.js'
 
-class App extends Component {
-  render() {
+const App = React.createClass({
+  render: function() {
     return (
       <div>
         <AddTodo />
         <NavBar />
-                
+        
         <div>
           {this.props.children}
         </div>
       </div>
     )
   }
-}
+})
 
 App.propTypes = {
   children: PropTypes.node
