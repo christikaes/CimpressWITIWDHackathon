@@ -20,3 +20,19 @@ export const toggleTodo = (id) => {
     id
   }
 }
+
+export function save(recipe) {
+  console.log("Clicked save")
+  return {
+    type: 'SAVE',
+    recipe
+  }
+}
+
+export function update(x) {
+  console.log("Clicked update")
+  return {
+    type: 'UPDATE',
+    x
+  }
+}

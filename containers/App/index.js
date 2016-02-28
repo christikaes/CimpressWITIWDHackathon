@@ -1,16 +1,17 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import { NavBar } from '../../components'
-import styles from './styles.css'
+
+import AddTodo from '../AddTodo.js'
 
 class App extends Component {
   render() {
     return (
-      <div className={styles.test}>
-
+      <div>
+        <AddTodo />
         <NavBar />
                 
-        <div >
+        <div>
           {this.props.children}
         </div>
       </div>
