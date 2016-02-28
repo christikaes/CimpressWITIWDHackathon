@@ -29,18 +29,19 @@ export function save(recipe) {
   }
 }
 
-export function updateRecipe(key, value) {
+export function update(key, value) {
   console.log("Clicked update")
   return {
-    type: 'UPDATE_RECIPE',
+    type: 'UPDATE',
     key: key,
     value: value
   }
 }
 
-export function update(x) {
+export function setRecipe(value) {
+  console.log("Setting Default Recipe")
   return {
-    type: 'UPDATEX',
-    x
+    type: 'SET_RECIPE',
+    value: value
   }
 }

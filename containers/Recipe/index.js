@@ -3,6 +3,7 @@ import {bindActionCreators} from 'redux'
 import { connect } from 'react-redux'
 import { save, update } from '../../actions'
 import {RecipeSave, RecipeHeader, RecipeProfile} from '../../components'
+import UndoRedo from '../UndoRedo.js'
 
 // Notes: http://stackoverflow.com/questions/22677931/react-js-onchange-event-for-contenteditable
 
@@ -18,6 +19,8 @@ export default class Recipe extends Component {
         <RecipeProfile />
 
         <RecipeSave />
+
+        <UndoRedo />
 
       </div>
     )

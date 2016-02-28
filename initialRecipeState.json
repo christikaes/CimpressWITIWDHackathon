@@ -1,0 +1,20 @@
+{
+    "present": {
+    	"id": -1,
+        "title": "Title",
+        "caption": "Caption",
+        "fullName": "Full Name",
+        "office" : "Office (Vistaprint/ Cimpress)",
+        "officeLocation": "Office Location (Waltham, USA)",
+        "profileImg" : "(TODO) profileImg",
+        "foodImg": "(TODO) FoodImg",
+        "foodImgCrop": "(TODO) Food Image Crop",
+        "ingredientsList": ["Ingredient 1", "Ingredient 2"],
+        "directionsList": ["Direction 1", "Direction 2"],
+        "prepTime": "Prep Time",
+        "cookTime": "Cook Time",
+        "servings": "Servings",
+        "calories": "Calories",
+  		"background": "(TODO)"
+    }
+}

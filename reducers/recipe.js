@@ -3,13 +3,10 @@ import update from 'react-addons-update';
 
 const recipe = (state = {}, action) => {
   switch (action.type) {
-    case 'SAVE':
-      console.log("save")
-      return action.recipe
     case 'UPDATE':
-      let newState = update(state, {x: {$set: action.x}})
-      console.log("update")
-      return newState
+      return update(state, {[action.key]: {$set: action.value}});
+    case 'SET_RECIPE':
+      return update(state, {$set: action.value});
     default:
       console.log("default")
       return state
