@@ -38,7 +38,7 @@
 }
 
 .recipeContentContainer {
-	flex-grow: 12;
+	flex-grow: 8;
 
 	/*Hack?*/
 	display: -webkit-flex;
