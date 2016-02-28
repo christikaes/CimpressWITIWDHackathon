@@ -1,0 +1,13 @@
+.instructions {
+	display: -webkit-flex;
+	display: flex;
+	flex-direction: row;
+}
+
+.ingredients {
+	flex-grow: 1;
+}
+
+.directions {
+	flex-grow: 2;
+}

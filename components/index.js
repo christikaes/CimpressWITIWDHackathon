@@ -1,5 +1,10 @@
 export {default as NavBar} from './NavBar';
+export {default as Recipe} from './Recipe';
 export {default as RecipeHeader} from './Recipe/Header';
 export {default as RecipeProfile} from './Recipe/Profile';
+export {default as RecipeContent} from './Recipe/Content';
+export {default as RecipeInstructions} from './Recipe/Instructions';
+export {default as RecipeIngredients} from './Recipe/Ingredients';
+export {default as RecipeDirections} from './Recipe/Directions';
 export {default as RecipeSave} from './Recipe/Save';
 export {default as RecipeUndoRedo} from './Recipe/UndoRedo';

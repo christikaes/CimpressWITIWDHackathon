@@ -1,0 +1,59 @@
+* {
+	box-sizing: border-box;
+}
+[contenteditable="true"] {
+	cursor: pointer;
+}
+
+[contenteditable="true"]:hover {
+	border: 1px dashed blue;
+}
+
+
+.recipe {
+	margin: 20px auto;
+	composes: page from '../../commonStyles/dimensions.css';
+	composes: page from '../../commonStyles/boxShadow.css';
+	/*composes: rightPageInset from '../../commonStyles/boxShadow.css';*/
+
+	display: -webkit-flex;
+	display: flex;
+	flex-direction: column;
+}
+
+.contentContainer {
+	flex-grow: 5;
+
+	display: -webkit-flex;
+	display: flex;
+	flex-direction: row;
+}
+
+.foodImgLeft {
+	flex-grow: 1;
+	min-width: 20px;
+
+	/*TODO ADD IMAGE*/
+	composes: image from '../../commonStyles/colors.css';
+}
+
+.recipeContentContainer {
+	flex-grow: 12;
+
+	/*Hack?*/
+	display: -webkit-flex;
+	display: flex;
+	flex-direction: row;
+}
+
+.foodImgRight {
+	flex-grow: 3;
+	min-width: 100px;
+
+	composes: image from '../../commonStyles/colors.css';
+}
+
+.profileContainer{
+	composes: profile from '../../commonStyles/colors.css';
+	flex-grow: 1;
+}
