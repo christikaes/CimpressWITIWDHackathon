@@ -1,5 +1,11 @@
 var path = require('path')
 var webpack = require('webpack')
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
+
+// TODO: Do I need this?
+// Issues with css-loader and polyfill:
+// https://github.com/webpack/css-loader/issues/144
+// require('es6-promise').polyfill();
 
 module.exports = {
   devtool: 'cheap-module-eval-source-map',
@@ -15,7 +21,10 @@ module.exports = {
   plugins: [
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoErrorsPlugin()
+    new webpack.NoErrorsPlugin(),
+    new ExtractTextPlugin('app.css', {
+        allChunks: true
+    })
   ],
   module: {
     loaders: [{
@@ -23,6 +32,9 @@ module.exports = {
       loaders: ['babel'],
       exclude: /node_modules/,
       include: __dirname
+    },{
+      test: /\.css$/,
+      loader: ExtractTextPlugin.extract('style', 'css?modules&importLoaders=1&sourceMap=true')
     }]
   }
 }
