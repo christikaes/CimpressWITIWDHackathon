@@ -1,16 +1,17 @@
 import React, { Component, PropTypes, setState } from 'react'
 import {bindActionCreators} from 'redux'
 import { connect } from 'react-redux'
-import { update } from '../../../actions'
+import { update, updateRecipe } from '../../../actions'
 import ContentEditable from 'react-contenteditable'
 import styles from './styles.css'
 
 var Header = React.createClass({
 
   handleChange: function(evt){
-    const {update} = this.props;
+    const {update, updateRecipe} = this.props;
     console.log("handleChange")
     update(parseInt(evt.target.value))
+    updateRecipe("title", evt.target.value);
   },
 
   render: function(){
@@ -27,7 +28,8 @@ var Header = React.createClass({
 });
 
 Header.propTypes = {
-  update: PropTypes.func.isRequired
+  update: PropTypes.func.isRequired,
+  updateRecipe: PropTypes.func.isRequired
 }
 
 const mapStateToProps = (state) => {
@@ -38,7 +40,7 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatchToProps = (dispatch) => {
-  return bindActionCreators({ update }, dispatch);
+  return bindActionCreators({ update, updateRecipe }, dispatch);
 }
 
 export default connect(
