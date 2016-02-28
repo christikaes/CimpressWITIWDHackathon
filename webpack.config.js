@@ -5,7 +5,7 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 // TODO: Do I need this?
 // Issues with css-loader and polyfill:
 // https://github.com/webpack/css-loader/issues/144
-// require('es6-promise').polyfill();
+require('es6-promise').polyfill();
 
 module.exports = {
   devtool: 'cheap-module-eval-source-map',
