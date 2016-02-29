@@ -9,6 +9,13 @@
 	);
 }
 
+.toolbar {
+	-webkit-box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.5);
+	-moz-box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.5);
+	box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.5);
+	background-color: rgba(0,0,0,0.5);
+}
+
 .zigzag{
 	background: linear-gradient(#BCED91 49%, transparent 49%),
         linear-gradient(-45deg, white 33%, transparent 33%) 0 50%,

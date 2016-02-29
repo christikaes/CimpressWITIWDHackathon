@@ -1,0 +1,14 @@
+.toolbar {
+	padding: 20px;
+	position: fixed;
+	right: 0;
+	top:0;
+	width: 200px;
+	composes: toolbar from '../../../commonStyles/colors.css';
+
+	display: -webkit-flex;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items:center;
+}

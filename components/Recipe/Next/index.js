@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import { save } from '../../../actions'
 import {Button, Glyphicon} from 'react-bootstrap'
 
-class Save extends Component {
+class Next extends Component {
 
   render() {
     const {save, recipe} = this.props;
@@ -12,15 +12,15 @@ class Save extends Component {
     return (
       <div>
         <Button bsSize="large" onClick={save.bind(this, recipe)}>
-          <Glyphicon glyph="floppy-save" /> 
-          Save
+          <Glyphicon glyph="arrow-right" /> 
+          Next
         </Button>
       </div>
     )
   }
 }
 
-Save.propTypes = {
+Next.propTypes = {
   save: PropTypes.func.isRequired
 }
 
@@ -37,4 +37,4 @@ const mapDispatchToProps = (dispatch) => {
 export default connect(
 	mapStateToProps,
 	mapDispatchToProps
-)(Save)
+)(Next)

@@ -1,16 +1,19 @@
 import React from 'react'
 import { ActionCreators as UndoActionCreators } from 'redux-undo'
 import { connect } from 'react-redux'
+import {Button, Glyphicon} from 'react-bootstrap'
 
 let UndoRedo = ({ canUndo, canRedo, onUndo, onRedo }) => (
-  <p>
-    <button onClick={onUndo} disabled={!canUndo}>
+  <div>
+    <Button bsSize="large" onClick={onUndo} disabled={!canUndo}>
+      <Glyphicon glyph="backward" /> 
       Undo
-    </button>
-    <button onClick={onRedo} disabled={!canRedo}>
+    </Button>
+    <Button bsSize="large" onClick={onRedo} disabled={!canRedo}>
+      <Glyphicon glyph="forward" /> 
       Redo
-    </button>
-  </p>
+    </Button>
+  </div>
 )
 
 const mapStateToProps = (state) => {

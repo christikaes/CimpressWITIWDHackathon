@@ -1,17 +1,21 @@
 import React from 'react'
-import {Recipe, RecipeToolBar} from '../../components'
+import {RecipeSave, RecipeUndoRedo, RecipeNext} from '../../'
 import styles from './styles.css' 
+import {ButtonGroup} from 'react-bootstrap'
 
 // Notes: http://stackoverflow.com/questions/22677931/react-js-onchange-event-for-contenteditable
 
 const RecipeEditor = React.createClass({
   render: function() {
     return (
-      <div className={styles.recipe}>
-        <Recipe />
+      <div className={styles.toolbar}>
+        
+	        <RecipeSave />
 
-        <RecipeToolBar />
-      
+	        <RecipeUndoRedo />
+	      	
+	        <RecipeNext />
+	    
       </div>
     )
   }

@@ -8,3 +8,5 @@ export {default as RecipeIngredients} from './Recipe/Ingredients';
 export {default as RecipeDirections} from './Recipe/Directions';
 export {default as RecipeSave} from './Recipe/Save';
 export {default as RecipeUndoRedo} from './Recipe/UndoRedo';
+export {default as RecipeNext} from './Recipe/Next';
+export {default as RecipeToolBar} from './Recipe/ToolBar';
