@@ -55,6 +55,24 @@ app.post('/recipe-form', function(req, res){
 	});
 });
 
+//get the saved recipe
+app.get('/recipe-saved', function(req, res){
+	console.log("getting receipe");
+	var entry_id = req.query.entry_id;
+	if(entry_id){
+		db.query(entry_id, "receipe", function(status, data){
+			if(status){
+				res.status(200).send({ message: "successfully got recipie entry", data: data})
+			}
+			else{
+				res.status(500).send("failed to get receipe entry");
+			}
+		});
+	} else {
+		res.status(400).send("bad request : missing entry_id");
+	}
+});
+
 // ************************
 
 app.use(function(req, res) {
