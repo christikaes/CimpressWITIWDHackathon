@@ -24,7 +24,7 @@ const save = function(state) {
 	// TODO: Redirect to the saved doc
 
 	args =  {
-		parameters: {entry_id : "9a144033d124776ee2d0e82432bb329"}
+		parameters: {entry_id : "9a144033d124776ee2d0e82432bb329a"}
 	}
 
 	// direct way 
