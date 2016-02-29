@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 import { update } from '../../../actions'
 import ContentEditable from 'react-contenteditable'
 import styles from './styles.css'
+import {Glyphicon} from 'react-bootstrap'
 
 const RecipeIngredients = React.createClass({
   updateIngredients: function(evt){
@@ -11,10 +12,14 @@ const RecipeIngredients = React.createClass({
     update("ingredients", evt.target.value);
   },
 
+          // <Glyphicon glyph="shopping-cart" />
   render: function(){
     const {recipe} = this.props;
     return(
       <div className={styles.container}>
+        <div className={styles.header}>
+          <div>Ingredients</div>
+        </div>
         <ContentEditable  className={styles.ingredients} html={recipe.ingredients} disabled={false} onChange={this.updateIngredients} />
       </div>) 
   }

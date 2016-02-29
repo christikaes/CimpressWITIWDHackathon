@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 import { update } from '../../../actions'
 import ContentEditable from 'react-contenteditable'
 import styles from './styles.css'
+import {Glyphicon} from 'react-bootstrap'
 
 const RecipeDirections = React.createClass({
   updateDirections: function(evt){
@@ -11,10 +12,14 @@ const RecipeDirections = React.createClass({
     update("directions", evt.target.value);
   },
 
+          // <Glyphicon glyph="check" />
   render: function(){
     const {recipe} = this.props;
     return(
       <div className={styles.container}>
+        <div className={styles.header}>
+          <div>Directions</div>
+        </div>
         <ContentEditable  className={styles.directions} html={recipe.directions} disabled={false} onChange={this.updateDirections} />
       </div>) 
   }

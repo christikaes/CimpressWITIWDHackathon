@@ -8,6 +8,7 @@
 
 .ingredients {
 	flex-grow: 1;
+	border-right: 1px dashed;
 
 	white-space: nowrap;
 }

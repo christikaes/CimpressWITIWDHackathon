@@ -1,5 +1,13 @@
 .container {
 	padding: 20px;
+	text-align: right;
+}
+
+.header {
+	font-size: 24px;
+	display: flex;
+    align-items: center;
+    justify-content: flex-end;
 }
 
 .ingredients{
