@@ -16,6 +16,8 @@
 	composes: page from '../../commonStyles/boxShadow.css';
 	/*composes: rightPageInset from '../../commonStyles/boxShadow.css';*/
 
+	overflow: hidden;
+
 	display: -webkit-flex;
 	display: flex;
 	flex-direction: column;

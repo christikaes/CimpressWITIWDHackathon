@@ -2,15 +2,17 @@ import React from 'react'
 import { ActionCreators as UndoActionCreators } from 'redux-undo'
 import { connect } from 'react-redux'
 import {Button, Glyphicon} from 'react-bootstrap'
+import stylesDimensions from '../../../commonStyles/dimensions.css'
+import styles from './styles.css'
 
 let UndoRedo = ({ canUndo, canRedo, onUndo, onRedo }) => (
-  <div>
-    <Button bsSize="large" onClick={onUndo} disabled={!canUndo}>
-      <Glyphicon glyph="backward" /> 
+  <div className={styles.center}>
+    <Button bsSize="large" className={stylesDimensions.squareButton} onClick={onUndo} disabled={!canUndo}>
+      <Glyphicon glyph="backward" /> <br/>
       Undo
     </Button>
-    <Button bsSize="large" onClick={onRedo} disabled={!canRedo}>
-      <Glyphicon glyph="forward" /> 
+    <Button bsSize="large" className={stylesDimensions.squareButton} onClick={onRedo} disabled={!canRedo}>
+      <Glyphicon glyph="forward" /> <br/>
       Redo
     </Button>
   </div>

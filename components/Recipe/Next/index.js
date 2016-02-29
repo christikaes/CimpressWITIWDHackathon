@@ -3,6 +3,7 @@ import {bindActionCreators} from 'redux'
 import { connect } from 'react-redux'
 import { save } from '../../../actions'
 import {Button, Glyphicon} from 'react-bootstrap'
+import stylesDimensions from '../../../commonStyles/dimensions.css'
 
 class Next extends Component {
 
@@ -11,8 +12,8 @@ class Next extends Component {
 
     return (
       <div>
-        <Button bsSize="large" onClick={save.bind(this, recipe)}>
-          <Glyphicon glyph="arrow-right" /> 
+        <Button bsSize="large" className={stylesDimensions.squareButton} onClick={save.bind(this, recipe)}>
+          <Glyphicon glyph="arrow-right" /> <br/>
           Next
         </Button>
       </div>

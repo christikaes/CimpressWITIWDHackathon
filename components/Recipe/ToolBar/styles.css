@@ -4,6 +4,7 @@
 	right: 0;
 	top:0;
 	width: 200px;
+	height: 100%;
 	composes: toolbar from '../../../commonStyles/colors.css';
 
 	display: -webkit-flex;
