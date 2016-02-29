@@ -17,4 +17,18 @@
 
 .instructions {
 	flex-grow: 8;
+
+	/*Also Hack*/
+	display: -webkit-flex;
+	display: flex;
+	flex-direction: row;
+}
+
+.stats {
+	flex-grow: 2;
+	
+	/*Also Hack*/
+	display: -webkit-flex;
+	display: flex;
+	flex-direction: row;
 }

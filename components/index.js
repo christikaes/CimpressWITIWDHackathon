@@ -6,6 +6,7 @@ export {default as RecipeContent} from './Recipe/Content';
 export {default as RecipeInstructions} from './Recipe/Instructions';
 export {default as RecipeIngredients} from './Recipe/Ingredients';
 export {default as RecipeDirections} from './Recipe/Directions';
+export {default as RecipeStats} from './Recipe/Stats';
 export {default as RecipeSave} from './Recipe/Save';
 export {default as RecipeUndoRedo} from './Recipe/UndoRedo';
 export {default as RecipeNext} from './Recipe/Next';

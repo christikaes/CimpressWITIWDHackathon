@@ -14,6 +14,7 @@
 	margin: 20px auto;
 	composes: page from '../../commonStyles/dimensions.css';
 	composes: page from '../../commonStyles/boxShadow.css';
+	background-color: #ffffff;
 	/*composes: rightPageInset from '../../commonStyles/boxShadow.css';*/
 
 	overflow: hidden;

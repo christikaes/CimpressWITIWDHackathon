@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import { NavBar } from '../../components'
+import styles from './styles.css'
 
 const App = React.createClass({
   render: function() {

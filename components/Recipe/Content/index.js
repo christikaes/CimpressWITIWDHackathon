@@ -1,5 +1,5 @@
 import React from 'react'
-import {RecipeHeader, RecipeInstructions} from '../../'
+import {RecipeHeader, RecipeInstructions, RecipeStats} from '../../'
 import styles from './styles.css' 
 
 const RecipeContent = React.createClass({
@@ -11,6 +11,9 @@ const RecipeContent = React.createClass({
         </div>
         <div className={styles.instructions}>
         	<RecipeInstructions />
+        </div>
+        <div className={styles.stats}>
+          <RecipeStats />
         </div>
       </div>
     )

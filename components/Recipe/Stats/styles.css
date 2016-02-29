@@ -1,0 +1,14 @@
+.stats {
+	flex-grow: 1;
+	
+	display: -webkit-flex;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+	text-align: center;
+}
+
+.glyph {
+	font-size: 30px;
+}
