@@ -13,3 +13,10 @@ export function update(key, value) {
     value: value
   }
 }
+
+export function loading(state) {
+  return {
+    type: 'LOADING',
+    state: loading
+  }
+}

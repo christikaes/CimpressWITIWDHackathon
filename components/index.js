@@ -1,4 +1,5 @@
 export {default as NavBar} from './NavBar';
+export {default as Loading} from './Loading';
 export {default as Recipe} from './Recipe';
 export {default as RecipeHeader} from './Recipe/Header';
 export {default as RecipeProfile} from './Recipe/Profile';

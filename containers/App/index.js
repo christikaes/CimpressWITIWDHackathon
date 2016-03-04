@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
-import { NavBar } from '../../components'
+import { NavBar, Loading } from '../../components'
 import styles from './styles.css'
 
 const App = React.createClass({
@@ -8,7 +8,6 @@ const App = React.createClass({
     return (
       <div>
         <NavBar />
-
         <div>
           {this.props.children}
         </div>

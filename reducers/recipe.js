@@ -1,11 +1,13 @@
 import undoable, { distinctState } from 'redux-undo'
 import update from 'react-addons-update';
 import nodeRest from 'node-rest-client'
-// import request from 'request'
+// import { loading } from '../actions'
 
 const save = function(state) {
-	update(state, {"Loading": {$set: true}});
+	// update(state, {"Loading": {$set: action.value}});
 	// request.
+	// TODO: Need async actions for this
+	// dispatch({type: "LOADING", loading: true});
 
 	var client = new nodeRest.Client();
  
@@ -23,7 +25,7 @@ const save = function(state) {
 		console.log(data);
 		// raw response 
 		console.log(response);
-		update(state, {"Loading": {$set: false}});
+		// loading(false);
 	});
 
 	// TODO: Redirect to the saved doc
@@ -52,6 +54,8 @@ const recipe = (state = {}, action) => {
     case 'SAVE':
       save(state);
       return state;
+    case 'LOADING':
+      return update(state, {"Loading": {$set: action.loading}});
     default:
       return state
   }
