@@ -2,17 +2,15 @@ import React from 'react'
 import {Grid, Row, Col, Button} from 'react-bootstrap'
 import { LinkContainer } from 'react-router-bootstrap';
 
-var img = new Image();
-
 const Home = React.createClass({
   render: function() {
     return (
 	<Grid>
 	    <Row>
-	    	<Col xs={4}>
-	    		<img id="logo" class="two-columns" src={require("../../node_modules/image/CWIT_Logo-Cimpress.png")} alt="WIT_logo" />
+	    	<Col xs={1}>
+	    		<img id="logo" class="two-columns" src={require("../../node_modules/image/CWIT_Logo-Cimpress.png")} alt="WIT_logo" width="70" height="100" />
 	    	</Col>
-	    	<Col xs={8}>
+	    	<Col xs={11}>
 	    		<h1>Women In Technology Celebrates International Women's Day!</h1>
 	    	</Col>
 	    </Row>
