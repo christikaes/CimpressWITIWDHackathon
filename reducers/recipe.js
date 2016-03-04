@@ -1,8 +1,12 @@
 import undoable, { distinctState } from 'redux-undo'
 import update from 'react-addons-update';
 import nodeRest from 'node-rest-client'
+// import request from 'request'
 
 const save = function(state) {
+	update(state, {"Loading": {$set: true}});
+	// request.
+
 	var client = new nodeRest.Client();
  
 	// set content-type header and data as json in args parameter 
@@ -12,13 +16,14 @@ const save = function(state) {
 	};
 	
 	// TODO: Is there a way to make this a relative path?
-
-	// client.post("http://localhost:3000/recipe-form", args, function (data, response) {
-	client.post("http://ec2-52-26-116-243.us-west-2.compute.amazonaws.com:3000/recipe-form", args, function (data, response) {
+	var path = window.location.origin + "/recipe-form"
+	client.post(path, args, function (data, response) {
+	// client.post("http://ec2-52-26-116-243.us-west-2.compute.amazonaws.com:3000/recipe-form", args, function (data, response) {
 		// parsed response body as js object 
 		console.log(data);
 		// raw response 
 		console.log(response);
+		update(state, {"Loading": {$set: false}});
 	});
 
 	// TODO: Redirect to the saved doc
@@ -28,8 +33,9 @@ const save = function(state) {
 	}
 
 	// direct way 
-	// client.get("http://localhost:3000/recipe-saved", args, function (data, response) {
-	client.get("http://ec2-52-26-116-243.us-west-2.compute.amazonaws.com:3000/recipe-saved", args, function (data, response) {
+	var path = window.location.origin + "/recipe-saved"
+	client.get(path, args, function (data, response) {
+	// client.get("http://ec2-52-26-116-243.us-west-2.compute.amazonaws.com:3000/recipe-saved", args, function (data, response) {
 		// parsed response body as js object 
 		console.log(data);
 		// raw response 

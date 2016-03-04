@@ -6,14 +6,14 @@
         "office" : "Vistaprint",
         "officeLocation": "Waltham, USA",
         "profileImg" : "(TODO) profileImg",
-        "foodImg": "(TODO) FoodImg",
+        "foodImg": "(TODO/optional) FoodImg",
         "foodImgCrop": "(TODO) Food Image Crop",
         "ingredients": "<ul><li>Ingredient 1</li> <li>Ingredient 2</li>",
         "directions": "<ol><li>Direction 1</li> <li>Direction 2</li>",
         "prepTime": "30 min",
         "cookTime": "40 min",
         "servings": "5",
-        "calories": "1000",
+        "calories": "(optional)1000",
   		"background": "(TODO)"
     }
 }
