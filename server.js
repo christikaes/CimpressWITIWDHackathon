@@ -14,8 +14,8 @@ app.use(webpackHotMiddleware(compiler))
 
 // TODO MOVE THIS TO MIDDLEWARE
 
-// var bodyParser = require('body-parser');
-// app.use(bodyParser.json()); // for parsing application/json
+var bodyParser = require('body-parser');
+app.use(bodyParser.json()); // for parsing application/json
 // app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
 
 var db = require('./db.js');
@@ -32,7 +32,8 @@ var db = require('./db.js');
  */
 app.post('/tech-form', function(req, res){
 	console.log("posting tech contest entry");
-	db.update(req.query, "design_contest_submissions", function(status){
+    console.log(req.body);
+	db.update(req.body, "design_contest_submissions", function(status){
 		if(status){
 			res.status(200).send("successfully posted tech contest entry");
 		}
