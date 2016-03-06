@@ -8,11 +8,11 @@ const Tech = React.createClass({
             <Grid>
                 <h1>Submit a Tech Page</h1>  
                 <form onSubmit={this.submit} ref="form">
-                    <Input type="text" label="First Name" placeholder="Janet" ref="firstName" />
-                    <Input type="text" label="Last Name" placeholder="Doe" ref="lastName" />
-                    <Input type="email" label="Email Address" placeholder="jdoe@cimpress.com" ref="email" />
-                    <Input type="text" label="Business Unit and Office Location" placeholder="Vistaprint, Waltham" ref="office"/>
-                    <Input type="file" label="Tech page PDF" help="ADD DIMENSION AND RESOLUTION SPECS HERE" ref="file"/>
+                    <Input type="text" name="firstName" label="First Name" placeholder="Jane" ref="firstName" />
+                    <Input type="text" name="lastName" label="Last Name" placeholder="Doe" ref="lastName" />
+                    <Input type="email" name="email" label="Email Address" placeholder="jdoe@cimpress.com" ref="email" />
+                    <Input type="text" name="office" label="Business Unit and Office Location" placeholder="Vistaprint, Waltham" ref="office"/>
+                    <Input type="file" name="techPage" label="Tech page PDF" help="ADD DIMENSION AND RESOLUTION SPECS HERE" ref="file"/>
                     <ButtonInput type="submit" value="Submit Tech Page" bsStyle="primary"/>
                 </form>
             </Grid>
@@ -22,16 +22,16 @@ const Tech = React.createClass({
     submit: function(e) {
         e.preventDefault();
 
-        // var form = ReactDOM.findDOMNode(this.refs.form);
-        // var formData = new FormData(form);
-        // console.log(formData.get("firstName"));
+        var form = ReactDOM.findDOMNode(this.refs.form);
+        var formData = new FormData(form);
 
-        var data = {
-            "firstName": this.refs.firstName.getValue(),
-            "lastName": this.refs.lastName.getValue(),
-            "email": this.refs.email.getValue(),
-            "office": this.refs.office.getValue()
-        };
+        // TODO: Remove individual input refs if FormData keeps working
+        // var data = {
+        //     "firstName": this.refs.firstName.getValue(),
+        //     "lastName": this.refs.lastName.getValue(),
+        //     "email": this.refs.email.getValue(),
+        //     "office": this.refs.office.getValue()
+        // };
 
         var xmlhttp = new XMLHttpRequest();
         // var _this = this;
@@ -48,8 +48,9 @@ const Tech = React.createClass({
             }
         };
         xmlhttp.open('POST', window.location.origin + "/tech-form", true);
-        xmlhttp.setRequestHeader('Content-type', 'application/json');
-        xmlhttp.send(JSON.stringify(data));
+        // xmlhttp.setRequestHeader('Content-type', 'application/json');
+        // xmlhttp.send(JSON.stringify(data));
+        xmlhttp.send(formData);
     }
 });
 

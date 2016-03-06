@@ -18,6 +18,9 @@ var bodyParser = require('body-parser');
 app.use(bodyParser.json()); // for parsing application/json
 // app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
 
+var multer  = require('multer');
+var upload = multer();
+
 var db = require('./db.js');
 
 /**
@@ -30,10 +33,28 @@ var db = require('./db.js');
  *    "random": "something"
  * }
  */
-app.post('/tech-form', function(req, res){
+// app.post('/tech-form', function(req, res){
+//     console.log("posting tech contest entry");
+//     console.log(req.body);
+//     db.update(req.body, "design_contest_submissions", function(status){
+//         if(status){
+//             res.status(200).send("successfully posted tech contest entry");
+//         }
+//         else{
+//             res.status(500).send("failed to post tech contest entry");
+//         }
+//     });
+// });
+
+app.post('/tech-form', upload.single('techPage'), function(req, res){
 	console.log("posting tech contest entry");
-    console.log(req.body);
-	db.update(req.body, "design_contest_submissions", function(status){
+
+    var data = req.body;
+    data.fileName = req.file.originalname;
+
+    console.log(data);
+
+	db.update(data, "design_contest_submissions", function(status){
 		if(status){
 			res.status(200).send("successfully posted tech contest entry");
 		}
