@@ -3,9 +3,10 @@
         "title": "Everything Burrito",
         "caption": "You're my everything buritto",
         "fullName": "Jake Thedog",
-        "office" : "Vistaprint",
-        "officeLocation": "Waltham, USA",
+        "company" : "Vistaprint",
+        "companyLocation": "Waltham, USA",
         "profileImg" : "(TODO) profileImg",
+        "profileSummary" : "summary symmarysummary symmarysummary symmarysummary symmarysummary symmarysummary symmarysummary symmarysummary symmary",
         "foodImg": "(TODO/optional) FoodImg",
         "foodImgCrop": "(TODO) Food Image Crop",
         "ingredients": "<ul><li>Ingredient 1</li> <li>Ingredient 2</li>",
@@ -14,6 +15,6 @@
         "cookTime": "40 min",
         "servings": "5",
         "calories": "(optional)1000",
-  		"background": "(TODO)"
+        "background": "(TODO)"
     }
 }
