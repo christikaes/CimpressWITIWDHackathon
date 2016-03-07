@@ -15,11 +15,16 @@ export default (
         { /* Home (main) route  */ }
   		<IndexRoute component={Home}/>
 
-      { /* Routes */ }
-       	<Route path="home" component={Home}/>
-      	<Route path="tech" component={Tech}/>
-      	<Route path="recipe" component={RecipeEditor}/>
+      { /* Routes 
+
+    <Route path="home" component={Home}/>
+        <Route path="tech" component={Tech}/>
+        <Route path="recipe" component={RecipeEditor}/>
         <Route path="recipe/:id" component={RecipeEditor}/>
+
+
+      */ }
+       	
         <Route path="recipepreview/:id" component={RecipePreview}/>
 
       { /* Catch all routes */ }      
