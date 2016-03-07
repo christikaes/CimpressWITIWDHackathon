@@ -8,6 +8,7 @@ import routes from './routes'
 import configureStore from './store/configureStore'
 import initialRecipeState from './initialRecipeState.json'
 import nodeRest from 'node-rest-client'
+import { fetchRetrieveIfNeeded } from './actions'
 
 // TODO: SET INITIAL STATE HERE WOO
 const initialState = {"recipe": initialRecipeState}
@@ -28,6 +29,8 @@ const initialState = {"recipe": initialRecipeState}
 		// });
 
 const store = configureStore(initialState);
+
+store.dispatch(fetchRetrieveIfNeeded("d7aff1b9c43e239b983d5dc9679e6110", true));
 
 const rootElement = document.getElementById('root')
 render(

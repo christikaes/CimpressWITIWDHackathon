@@ -118,13 +118,17 @@ function fetchRetrieve(id) {
 }
 
 function shouldFetchRetrieve(state) {
+  console.log("!!")
+  console.log(state.loading)
   return !state.loading;
 }
 
-export function fetchRetrieveIfNeeded(id) {
+export function fetchRetrieveIfNeeded(id, force) {
   console.log("1")
   return (dispatch, getState) => {
-    if (shouldFetchRetrieve(getState())) {
+    console.log("?")
+    if (force || shouldFetchRetrieve(getState())) {
+      console.log("1.1")
       return dispatch(fetchRetrieve(id))
     }
   }
