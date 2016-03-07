@@ -2,8 +2,7 @@ import React from 'react'
 import {Grid, Row, Col, Button} from 'react-bootstrap'
 import { LinkContainer } from 'react-router-bootstrap';
 import styles from './styles.css' 
-
-var CountDown = require('react-count-down');
+import CountDown from 'react-count-down';
 
 var OPTIONS = { endDate: '03/31/2016 11:59 PM', prefix: 'until submission ends! (in EST)' }
 
