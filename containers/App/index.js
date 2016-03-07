@@ -3,11 +3,11 @@ import { connect } from 'react-redux'
 import { NavBar, Loading } from '../../components'
 import styles from './styles.css'
 
+        // <NavBar />
 const App = React.createClass({
   render: function() {
     return (
       <div>
-        <NavBar />
         <div>
           {this.props.children}
         </div>

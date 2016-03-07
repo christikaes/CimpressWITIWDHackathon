@@ -6,7 +6,8 @@ import {
 	NotFound,
 	Home,
 	Tech,
-	RecipeEditor
+	RecipeEditor,
+  RecipePreview
 } from './containers';
 
 export default (
@@ -19,6 +20,7 @@ export default (
       	<Route path="tech" component={Tech}/>
       	<Route path="recipe" component={RecipeEditor}/>
         <Route path="recipe/:id" component={RecipeEditor}/>
+        <Route path="recipepreview/:id" component={RecipePreview}/>
 
       { /* Catch all routes */ }      
       <Route path="*" component={NotFound} status={404} />
