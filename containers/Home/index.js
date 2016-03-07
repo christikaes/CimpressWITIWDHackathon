@@ -45,7 +45,7 @@ const Home = React.createClass({
 	    <Row>
 		<br/>
 	      <Col xs={12} md={5} className={styles.submission}>
-	          <img src={require("../../img/recipe.png")} alt="Recipe image" width="120" height="120" />
+	          <img src={require("../../img/recipe.png")} alt="Recipe image" width="100" height="100" />
 	          <h2>Recipe</h2>
 	          <p>Submit your favorite recipe, a unique cultural specialty, or something for fun! </p>
 	          <LinkContainer to="/recipe">
@@ -54,7 +54,7 @@ const Home = React.createClass({
 	      </Col>
 		   <Col xs={1}> </Col>
 	      <Col xs={12} md={5} className={styles.submission}>
-	          <img src={require("../../img/puzzle.png")} alt="Puzzle image" width="120" height="120" />
+	          <img src={require("../../img/puzzle.png")} alt="Puzzle image" width="100" height="100" />
 	          <h2>Tech Page</h2>
 	          <p>Submit an interesting article on an innovative technology or a fun yet challenging puzzle!</p>
 	          <LinkContainer to="/tech">
