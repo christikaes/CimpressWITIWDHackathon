@@ -18,6 +18,7 @@
 }
 
 .profile {
+	height: 100%;
 	background-color: rgb(121,222,201);
 
 	flex-grow: 1;
