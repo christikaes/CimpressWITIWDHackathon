@@ -7,7 +7,14 @@ import styles from './styles.css'
 const App = React.createClass({
   render: function() {
     return (
-      <div>
+	 <div>   
+        <div className = {styles.logo}>
+		<img id="logo" src={require("../../img/CWIT_Logo-Cimpress.png")} alt="WIT_logo" width="40" height="60" />
+		</div>
+		<div>
+	    <h1 className = {styles.title}>Women In Technology Celebrates International Women's Day!</h1>              
+        </div>
+    
         <a href="http://FreeHTMLtoPDF.com/?convert">Download as PDF</a>
         <a href="http://api.html2pdfrocket.com/pdf?value=http://ec2-52-26-116-243.us-west-2.compute.amazonaws.com:3000&apikey=ef82f568-7282-4d99-adf0-7f2b936f20ae">Download PDF</a>
         <div>
