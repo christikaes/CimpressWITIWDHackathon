@@ -1,0 +1,57 @@
+.recipe{
+	margin: 20px auto;
+	composes: page from '../../commonStyles/dimensions.css';
+	composes: page from '../../commonStyles/boxShadow.css';
+	background-color: #ffffff;
+	/*composes: rightPageInset from '../../commonStyles/boxShadow.css';*/
+
+	overflow: hidden;
+
+	display: -webkit-flex;
+	display: flex;
+	flex-direction: row;
+}
+
+.content {
+	flex-grow: 2;
+	min-width: 200px;
+}
+
+.profile {
+	background-color: rgb(121,222,201);
+
+	flex-grow: 1;
+	max-width: 30%;
+
+	text-align: center;
+
+	display: -webkit-flex;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+}
+
+.profilePicture {
+	/*TODO ADD IMAGE*/
+	width: 200px;
+	height: 200px;
+	background-color: #ccc;
+
+	flex-grow: 5;
+}
+
+.profileName {
+	flex-grow: 1;
+}
+
+.profileCompany {
+	flex-grow: 1;
+}
+
+.profileCompanyLocation {
+	flex-grow: 1;
+}
+
+.profileSummary {
+	flex-grow: 10;
+}
