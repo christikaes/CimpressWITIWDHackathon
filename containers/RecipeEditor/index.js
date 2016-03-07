@@ -5,8 +5,6 @@ import {Recipe, RecipeToolBar, Loading} from '../../components'
 import { fetchRetrieveIfNeeded } from '../../actions'
 import styles from './styles.css' 
 
-// Notes: http://stackoverflow.com/questions/22677931/react-js-onchange-event-for-contenteditable
-
 const RecipeEditor = React.createClass({
   componentDidMount: function() {
   	const {id} = this.props.params;
