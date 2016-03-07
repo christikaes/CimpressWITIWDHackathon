@@ -99,6 +99,15 @@ app.get('/recipe-saved', function(req, res){
 	}
 });
 
+// ***************************
+
+// app.use(handleRender)
+
+
+// app.get("/preview", function(req, res){
+
+// })
+
 // ************************
 
 app.use(function(req, res) {
