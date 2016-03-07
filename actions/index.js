@@ -1,13 +1,5 @@
 import fetch from 'isomorphic-fetch'
 
-export function save(recipe) {
-  console.log("Clicked save")
-  return {
-    type: 'SAVE',
-    recipe
-  }
-}
-
 export function update(key, value) {
   return {
     type: 'UPDATE',
@@ -71,10 +63,10 @@ function shouldFetchSave(state) {
   return !state.loading;
 }
 
-export function fetchSaveIfNeeded(recipe) {
+export function fetchSaveIfNeeded(recipe, force) {
   console.log("1")
   return (dispatch, getState) => {
-    if (shouldFetchSave(getState())) {
+    if (force || shouldFetchSave(getState())) {
       return dispatch(fetchSave(recipe))
     }
   }

@@ -10,7 +10,7 @@ const Loading = React.createClass({
         render: function() {
             return (
                 <div className={styles.container}>
-                    Loading
+                    <h2> Loading </h2>
                 </div>
             );
         }

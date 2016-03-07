@@ -17,9 +17,7 @@ const Header = React.createClass({
   },
 
   render: function(){
-    console.log("renda")
     const {recipe} = this.props;
-    console.log(recipe)
     return(
       <div className={styles.header}>
         <div className={styles.title}>
