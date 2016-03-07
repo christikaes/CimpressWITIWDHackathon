@@ -19,7 +19,7 @@ const RecipeEditor = React.createClass({
     const {update} = this.props;
     update(evt.currentTarget.id, evt.target.value)
   },
-        // <Recipe />
+
   render: function() {
     const {recipe} = this.props;
     const disabled = false;
@@ -27,7 +27,7 @@ const RecipeEditor = React.createClass({
     return (
       <div className={styles.recipe}>
         <div className={styles.content}>
-          <div className={styles.foodPicture}> </div>
+          <img className={styles.foodPicture} />
           <ContentEditable id="title" className={styles.title} html={recipe.title} disabled={disabled} onChange={this.update} />
           <ContentEditable id="caption"  className={styles.caption} html={recipe.caption} disabled={disabled} onChange={this.update} />
           <div className={styles.instructions}> 
@@ -40,7 +40,7 @@ const RecipeEditor = React.createClass({
           </div>
         </div>
         <div className={styles.profile}>
-          <div className={styles.profilePicture}> </div>
+          <img className={styles.profilePicture} />
           <ContentEditable id="fullName" className={styles.profileName} html={recipe.fullName} disabled={disabled} onChange={this.update} />
           <ContentEditable id="company"  className={styles.profileCompany} html={recipe.company} disabled={disabled} onChange={this.update} />
           <ContentEditable id="companyLocation"  className={styles.profileCompanyLocation} html={recipe.companyLocation} disabled={disabled} onChange={this.update} />
