@@ -27,7 +27,17 @@ const RecipeEditor = React.createClass({
     return (
       <div className={styles.recipe}>
         <div className={styles.content}>
-          
+          <div className={styles.foodPicture}> </div>
+          <ContentEditable id="title" className={styles.title} html={recipe.title} disabled={disabled} onChange={this.update} />
+          <ContentEditable id="caption"  className={styles.caption} html={recipe.caption} disabled={disabled} onChange={this.update} />
+          <div className={styles.instructions}> 
+            <div className={styles.ingredients}>
+              <ContentEditable id="ingredients" className={styles.ingredientsList} html={recipe.ingredients} disabled={disabled} onChange={this.update} />
+            </div>
+            <div className={styles.directions}>
+              <ContentEditable id="directions" className={styles.directionsList} html={recipe.directions} disabled={disabled} onChange={this.update} />
+            </div>
+          </div>
         </div>
         <div className={styles.profile}>
           <div className={styles.profilePicture}> </div>

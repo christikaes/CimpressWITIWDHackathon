@@ -8,13 +8,6 @@
 	overflow: hidden;
 }
 
-.content {
-	float: left;
-	height: 100%;
-	width: 70%;
-	min-width: 200px;
-}
-
 .profile {
 	padding: 10px;
 	float: right;
@@ -27,7 +20,7 @@
 .profilePicture {
 	/*TODO ADD IMAGE*/
 	margin: auto;
-	width: 200px;
+	width: 100%;
 	height: 200px;
 	background-color: #ccc;
 	margin-bottom: 15px;
@@ -41,4 +34,45 @@
 
 .profileSummary {
 	margin-top: 15px;
+}
+
+
+.content {
+	float: left;
+	height: 100%;
+	width: 70%;
+	min-width: 200px;
+	padding: 10px;
+}
+
+
+.foodPicture {
+	/*TODO ADD IMAGE*/
+	margin: auto;
+	width: 100%;
+	height: 200px;
+	background-color: #ccc;
+	margin-bottom: 15px;
+}
+
+.title {
+	text-align: center;
+	font-size: 32px;
+	font-style: Garamond;
+}
+
+.caption {
+	text-align: center;
+	font-size: 24px;
+	font-style: Garamond;
+}
+
+.ingredients{
+	float: left;
+	width: 30%;
+}
+
+.directions {
+	float: left;
+	width: 70%;
 }
