@@ -27,7 +27,7 @@ const RecipeEditor = React.createClass({
     return (
       <div className={styles.recipe}>
         <div className={styles.content}>
-
+          
         </div>
         <div className={styles.profile}>
           <div className={styles.profilePicture}> </div>

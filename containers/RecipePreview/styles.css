@@ -6,53 +6,39 @@
 	/*composes: rightPageInset from '../../commonStyles/boxShadow.css';*/
 
 	overflow: hidden;
-
-	display: -webkit-flex;
-	display: flex;
-	flex-direction: row;
 }
 
 .content {
-	flex-grow: 2;
+	float: left;
+	height: 100%;
+	width: 70%;
 	min-width: 200px;
 }
 
 .profile {
+	padding: 10px;
+	float: right;
 	height: 100%;
+	width: 30%;
 	background-color: rgb(121,222,201);
-
-	flex-grow: 1;
-	max-width: 30%;
-
 	text-align: center;
-
-	display: -webkit-flex;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-around;
 }
 
 .profilePicture {
 	/*TODO ADD IMAGE*/
+	margin: auto;
 	width: 200px;
 	height: 200px;
 	background-color: #ccc;
-
-	flex-grow: 5;
+	margin-bottom: 15px;
 }
 
-.profileName {
-	flex-grow: 1;
-}
-
-.profileCompany {
-	flex-grow: 1;
-}
-
+.profileName,
+.profileCompany,
 .profileCompanyLocation {
-	flex-grow: 1;
+	margin: 5px auto;
 }
 
 .profileSummary {
-	flex-grow: 10;
+	margin-top: 15px;
 }
