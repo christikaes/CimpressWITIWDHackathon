@@ -13,10 +13,11 @@ const RecipeEditor = React.createClass({
   	}
   },
 
+        // <Recipe />
   render: function() {
     return (
       <div>
-        <Recipe />
+        Hello
       </div>
     )
   }
