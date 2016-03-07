@@ -8,6 +8,7 @@ const App = React.createClass({
   render: function() {
     return (
       <div>
+        <a href="http://FreeHTMLtoPDF.com/?convert">Download as PDF</a>
         <div>
           {this.props.children}
         </div>
