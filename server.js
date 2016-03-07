@@ -69,9 +69,11 @@ app.post('/tech-form', upload.single('techPage'), function(req, res){
 //see comment above for how to use
 app.post('/recipe-form', function(req, res){
 	console.log("posting receipe");
-	db.update(req.query, "receipe", function(status){
+	console.log(req.body)
+	db.update(req.body, "receipe", function(status, data){
 		if(status){
-			res.status(200).send("successfully posted receipe entry");
+			console.log("HERE")
+			res.status(200).send({message: "successfully posted receipe entry", data: data});
 		}
 		else{
 			res.status(500).send("failed to post receipe entry");

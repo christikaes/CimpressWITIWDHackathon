@@ -3,6 +3,12 @@ import update from 'react-addons-update';
 import nodeRest from 'node-rest-client'
 // import { loading } from '../actions'
 
+// async function fetchJSONAsync(url) {
+//   let response = await fetch(url);
+//   let body = await response.json();
+//   return body;
+// }
+
 const save = function(state) {
 	// update(state, {"Loading": {$set: action.value}});
 	// request.
@@ -26,6 +32,9 @@ const save = function(state) {
 		// raw response 
 		console.log(response);
 		// loading(false);
+
+		state = update(state, {"Loading": {$set: false}});
+		return state;
 	});
 
 	// TODO: Redirect to the saved doc
@@ -52,10 +61,12 @@ const recipe = (state = {}, action) => {
     case 'UPDATE':
       return update(state, {[action.key]: {$set: action.value}});
     case 'SAVE':
-      save(state);
-      return state;
-    case 'LOADING':
-      return update(state, {"Loading": {$set: action.loading}});
+      return save(state);
+    case 'REQUEST_SAVE':
+      return update(state, {"Loading": {$set: true}});
+    case 'RECEIVE_SAVE':
+      console.log(action.data)
+      return update(state, {"Loading": {$set: false}});
     default:
       return state
   }

@@ -1,18 +1,18 @@
 import React, { Component, PropTypes, setState } from 'react'
 import {bindActionCreators} from 'redux'
 import { connect } from 'react-redux'
-import { save } from '../../../actions'
+import { save, fetchSaveIfNeeded } from '../../../actions'
 import {Button, Glyphicon} from 'react-bootstrap'
 import stylesDimensions from '../../../commonStyles/dimensions.css'
 
 class Save extends Component {
 
   render() {
-    const {save, recipe} = this.props;
+    const {save, fetchSaveIfNeeded, recipe} = this.props;
 
     return (
       <div>
-        <Button bsSize="large" className={stylesDimensions.squareButton} onClick={save.bind(this, recipe)}>
+        <Button bsSize="large" className={stylesDimensions.squareButton} onClick={fetchSaveIfNeeded.bind(this, recipe)}>
           <Glyphicon glyph="floppy-save" /> <br/>
           Save
         </Button>
@@ -22,7 +22,8 @@ class Save extends Component {
 }
 
 Save.propTypes = {
-  save: PropTypes.func.isRequired
+  save: PropTypes.func.isRequired,
+  fetchSaveIfNeeded: PropTypes.func.isRequired
 }
 
 const mapStateToProps = (state) => {
@@ -32,7 +33,7 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatchToProps = (dispatch) => {
-  return bindActionCreators({ save }, dispatch);
+  return bindActionCreators({ save, fetchSaveIfNeeded }, dispatch);
 }
 
 export default connect(

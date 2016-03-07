@@ -44,7 +44,7 @@ Db.prototype.update = function(information, table, after){
         	result = true;
        	}
 
-       	after(result);
+       	after(result, {entry_id : information.entry_id});
 	});
 };
 
