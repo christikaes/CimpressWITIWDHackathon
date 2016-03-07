@@ -17,25 +17,25 @@ const save = function(state) {
 
 	var client = new nodeRest.Client();
  
-	// set content-type header and data as json in args parameter 
-	var args = {
-		parameters: state,
-		headers: { "Content-Type": "application/json" }
-	};
+	// // set content-type header and data as json in args parameter 
+	// var args = {
+	// 	parameters: state,
+	// 	headers: { "Content-Type": "application/json" }
+	// };
 	
-	// TODO: Is there a way to make this a relative path?
-	var path = window.location.origin + "/recipe-form"
-	client.post(path, args, function (data, response) {
-	// client.post("http://ec2-52-26-116-243.us-west-2.compute.amazonaws.com:3000/recipe-form", args, function (data, response) {
-		// parsed response body as js object 
-		console.log(data);
-		// raw response 
-		console.log(response);
-		// loading(false);
+	// // TODO: Is there a way to make this a relative path?
+	// var path = window.location.origin + "/recipe-form"
+	// client.post(path, args, function (data, response) {
+	// // client.post("http://ec2-52-26-116-243.us-west-2.compute.amazonaws.com:3000/recipe-form", args, function (data, response) {
+	// 	// parsed response body as js object 
+	// 	console.log(data);
+	// 	// raw response 
+	// 	console.log(response);
+	// 	// loading(false);
 
-		state = update(state, {"Loading": {$set: false}});
-		return state;
-	});
+	// 	state = update(state, {"Loading": {$set: false}});
+	// 	return state;
+	// });
 
 	// TODO: Redirect to the saved doc
 
@@ -62,11 +62,9 @@ const recipe = (state = {}, action) => {
       return update(state, {[action.key]: {$set: action.value}});
     case 'SAVE':
       return save(state);
-    case 'REQUEST_SAVE':
-      return update(state, {"Loading": {$set: true}});
     case 'RECEIVE_SAVE':
       console.log(action.data)
-      return update(state, {"Loading": {$set: false}});
+      // return update(state, {"Loading": {$set: false}});
     default:
       return state
   }

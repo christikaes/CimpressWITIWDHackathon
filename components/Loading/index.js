@@ -15,17 +15,17 @@ const Loading = React.createClass({
             );
         }
     });
-    const {recipe} = this.props;
+    const {loading} = this.props;
     return(
       <div>
-        {recipe.Loading ? <LoadingBox /> : null}
+        {loading ? <LoadingBox /> : null}
       </div>) 
   }
 });
 
 const mapStateToProps = (state) => {
   return {
-    recipe: state.recipe.present
+    loading: state.loading
   }
 }
 
