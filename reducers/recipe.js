@@ -1,60 +1,6 @@
 import undoable, { distinctState } from 'redux-undo'
 import update from 'react-addons-update';
 import nodeRest from 'node-rest-client'
-// import { loading } from '../actions'
-
-// async function fetchJSONAsync(url) {
-//   let response = await fetch(url);
-//   let body = await response.json();
-//   return body;
-// }
-
-const save = function(state) {
-	// update(state, {"Loading": {$set: action.value}});
-	// request.
-	// TODO: Need async actions for this
-	// dispatch({type: "LOADING", loading: true});
-
-	var client = new nodeRest.Client();
- 
-	// // set content-type header and data as json in args parameter 
-	// var args = {
-	// 	parameters: state,
-	// 	headers: { "Content-Type": "application/json" }
-	// };
-	
-	// // TODO: Is there a way to make this a relative path?
-	// var path = window.location.origin + "/recipe-form"
-	// client.post(path, args, function (data, response) {
-	// // client.post("http://ec2-52-26-116-243.us-west-2.compute.amazonaws.com:3000/recipe-form", args, function (data, response) {
-	// 	// parsed response body as js object 
-	// 	console.log(data);
-	// 	// raw response 
-	// 	console.log(response);
-	// 	// loading(false);
-
-	// 	state = update(state, {"Loading": {$set: false}});
-	// 	return state;
-	// });
-
-	// TODO: Redirect to the saved doc
-
-	args =  {
-		parameters: {entry_id : "9a144033d124776ee2d0e82432bb329a"}
-	}
-
-	// direct way 
-	var path = window.location.origin + "/recipe-saved"
-	client.get(path, args, function (data, response) {
-	// client.get("http://ec2-52-26-116-243.us-west-2.compute.amazonaws.com:3000/recipe-saved", args, function (data, response) {
-		// parsed response body as js object 
-		console.log(data);
-		// raw response 
-		console.log(response);
-	});
-
-}
-
 
 const recipe = (state = {}, action) => {
   switch (action.type) {
@@ -64,7 +10,9 @@ const recipe = (state = {}, action) => {
       return save(state);
     case 'RECEIVE_SAVE':
       console.log(action.data)
-      // return update(state, {"Loading": {$set: false}});
+    case 'RECEIVE_RETRIEVE':
+    	console.log(action.data)
+    	return action.data
     default:
       return state
   }

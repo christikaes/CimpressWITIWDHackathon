@@ -1,14 +1,14 @@
 import React, { Component, PropTypes, setState } from 'react'
 import {bindActionCreators} from 'redux'
 import { connect } from 'react-redux'
-import { save, fetchSaveIfNeeded } from '../../../actions'
+import { fetchSaveIfNeeded, fetchRetrieveIfNeeded } from '../../../actions'
 import {Button, Glyphicon} from 'react-bootstrap'
 import stylesDimensions from '../../../commonStyles/dimensions.css'
 
 class Save extends Component {
 
   render() {
-    const {save, fetchSaveIfNeeded, recipe} = this.props;
+    const {fetchSaveIfNeeded, fetchRetrieveIfNeeded, recipe} = this.props;
 
     return (
       <div>
@@ -16,14 +16,18 @@ class Save extends Component {
           <Glyphicon glyph="floppy-save" /> <br/>
           Save
         </Button>
+        <Button bsSize="large" className={stylesDimensions.squareButton} onClick={fetchRetrieveIfNeeded.bind(this, "9a919b2b4e1613f24a4cac08ef86cf5e")}>
+          <Glyphicon glyph="floppy-save" /> <br/>
+          LOAD
+        </Button>
       </div>
     )
   }
 }
 
 Save.propTypes = {
-  save: PropTypes.func.isRequired,
-  fetchSaveIfNeeded: PropTypes.func.isRequired
+  fetchSaveIfNeeded: PropTypes.func.isRequired,
+  fetchRetrieveIfNeeded: PropTypes.func.isRequired
 }
 
 const mapStateToProps = (state) => {
@@ -33,7 +37,7 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatchToProps = (dispatch) => {
-  return bindActionCreators({ save, fetchSaveIfNeeded }, dispatch);
+  return bindActionCreators({ fetchSaveIfNeeded, fetchRetrieveIfNeeded }, dispatch);
 }
 
 export default connect(
