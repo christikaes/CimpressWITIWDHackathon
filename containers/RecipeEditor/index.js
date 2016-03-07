@@ -9,10 +9,11 @@ import styles from './styles.css'
 
 const RecipeEditor = React.createClass({
   componentDidMount: function() {
-  	console.log("HERE")
-  	const {fetchRetrieve} = this.props;
-  	let id = "d73bee8d817f11104c7ac98fc8f465f7"
-    // dispatch(fetchRetrieveIfNeeded(id, true));
+  	const {id} = this.props.params;
+  	if(id){
+	  	const {fetchRetrieveIfNeeded} = this.props;
+	  	fetchRetrieveIfNeeded(id, true);
+  	}
   },
 
   render: function() {
@@ -34,10 +35,17 @@ RecipeEditor.propTypes = {
   fetchRetrieveIfNeeded: PropTypes.func.isRequired
 }
 
+const mapStateToProps = (state) => {
+  return {
+    recipe: state.recipe.present
+  }
+}
+
 const mapDispatchToProps = (dispatch) => {
   return bindActionCreators({ fetchRetrieveIfNeeded }, dispatch);
 }
 
 export default connect(
+	mapStateToProps,
 	mapDispatchToProps
 )(RecipeEditor)

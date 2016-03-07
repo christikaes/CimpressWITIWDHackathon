@@ -18,6 +18,7 @@ export default (
        	<Route path="home" component={Home}/>
       	<Route path="tech" component={Tech}/>
       	<Route path="recipe" component={RecipeEditor}/>
+        <Route path="recipe/:id" component={RecipeEditor}/>
 
       { /* Catch all routes */ }      
       <Route path="*" component={NotFound} status={404} />

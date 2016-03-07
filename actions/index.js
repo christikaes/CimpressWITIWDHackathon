@@ -124,9 +124,10 @@ function shouldFetchRetrieve(state) {
 }
 
 export function fetchRetrieveIfNeeded(id, force) {
-  console.log("1")
+  console.log("1!!!!!!!!!!!")
   return (dispatch, getState) => {
     console.log("?")
+    console.log(shouldFetchRetrieve(getState()))
     if (force || shouldFetchRetrieve(getState())) {
       console.log("1.1")
       return dispatch(fetchRetrieve(id))
