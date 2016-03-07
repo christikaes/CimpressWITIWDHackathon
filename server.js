@@ -14,43 +14,34 @@ app.use(webpackHotMiddleware(compiler))
 
 // TODO MOVE THIS TO MIDDLEWARE
 
+// TODO: Not sure we need body-parser any more
 var bodyParser = require('body-parser');
 app.use(bodyParser.json()); // for parsing application/json
 // app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
 
+// Middleware for handling multipart forms with file uploads
 var multer  = require('multer');
-var upload = multer();
+var techPageStorage = multer.diskStorage({
+    destination: 'uploads/',
+    filename: function(req, file, cb) {
+        cb(null, req.body.lastName + "-" + Date.now() + ".pdf"); 
+        // TODO: enforce PDF uploads only, or add file extension based on file type
+    }
+});
+var upload = multer({ storage: techPageStorage });
 
 var db = require('./db.js');
 
-/**
- * whatever get passed through query string get saved in db
- * for example, if you call /tech-form?name=something&email=something&random=something
- * it will save as
- * {
- * 	  "name": "something",
- *	  "email": "something",
- *    "random": "something"
- * }
- */
-// app.post('/tech-form', function(req, res){
-//     console.log("posting tech contest entry");
-//     console.log(req.body);
-//     db.update(req.body, "design_contest_submissions", function(status){
-//         if(status){
-//             res.status(200).send("successfully posted tech contest entry");
-//         }
-//         else{
-//             res.status(500).send("failed to post tech contest entry");
-//         }
-//     });
-// });
 
+
+// Handle a tech page submission
+    // Save uploaded PDF file to server (see above for destination and file name options)
+    // Save other form data including PDF filename
 app.post('/tech-form', upload.single('techPage'), function(req, res){
 	console.log("posting tech contest entry");
 
     var data = req.body;
-    data.fileName = req.file.originalname;
+    data.fileName = req.file.filename;
 
     console.log(data);
 
@@ -64,6 +55,17 @@ app.post('/tech-form', upload.single('techPage'), function(req, res){
 	});
 });
 
+
+/**
+ * whatever get passed through query string get saved in db
+ * for example, if you call /tech-form?name=something&email=something&random=something
+ * it will save as
+ * {
+ *    "name": "something",
+ *    "email": "something",
+ *    "random": "something"
+ * }
+ */
 //see comment above for how to use
 app.post('/recipe-form', function(req, res){
 	console.log("posting receipe");

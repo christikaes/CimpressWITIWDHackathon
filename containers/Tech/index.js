@@ -6,7 +6,8 @@ const Tech = React.createClass({
     render: function() {
         return (
             <Grid>
-                <h1>Submit a Tech Page</h1>  
+                <h1>Submit a Tech Page</h1>
+                <p className="lead">Some intro text should go here, with an explanation of what this is and links to the rules and stuff.</p>
                 <form onSubmit={this.submit} ref="form">
                     <Input type="text" name="firstName" label="First Name" placeholder="Jane" ref="firstName" />
                     <Input type="text" name="lastName" label="Last Name" placeholder="Doe" ref="lastName" />
@@ -60,3 +61,4 @@ export default Tech;
 //      File upload
 //      Validation
 //      Success/error messages
+//      Set rules (with multer) for file types and size limits
