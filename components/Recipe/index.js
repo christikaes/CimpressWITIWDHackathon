@@ -46,14 +46,18 @@ const Recipe = React.createClass({
             <img id="foodPicture" className={styles.foodPicture} src={imagePath + recipe.foodPicture.src} style={recipe.foodPicture.style} />
             {editing.foodPictureContainer ? <EditImage /> : null}
           </div>
-          <ContentEditable id="title" className={styles.title} html={recipe.title} disabled={disabled} onChange={this.update} />
-          <ContentEditable id="caption"  className={styles.caption} html={recipe.caption} disabled={disabled} onChange={this.update} />
-          <div className={styles.instructions}> 
-            <div className={styles.ingredients}>
-              <ContentEditable id="ingredients" className={styles.ingredientsList} html={recipe.ingredients} disabled={disabled} onChange={this.update} />
-            </div>
-            <div className={styles.directions}>
-              <ContentEditable id="directions" className={styles.directionsList} html={recipe.directions} disabled={disabled} onChange={this.update} />
+          <div className={styles.recipeContent}>
+            <h1><ContentEditable id="title" className={styles.title} html={recipe.title} disabled={disabled} onChange={this.update} /></h1>
+            <h2><ContentEditable id="caption"  className={styles.caption} html={recipe.caption} disabled={disabled} onChange={this.update} /></h2>
+            <div className={styles.instructions}> 
+              <div className={styles.ingredients}>
+                <h3> Ingredients </h3>
+                <ContentEditable id="ingredients" className={styles.ingredientsList} html={recipe.ingredients} disabled={disabled} onChange={this.update} />
+              </div>
+              <div className={styles.directions}>
+                <h3> Directions </h3>
+                <ContentEditable id="directions" className={styles.directionsList} html={recipe.directions} disabled={disabled} onChange={this.update} />
+              </div>
             </div>
           </div>
         </div>
@@ -62,10 +66,10 @@ const Recipe = React.createClass({
             <img id="profilePicture" className={styles.profilePicture} src={imagePath + recipe.profilePicture.src} style={recipe.profilePicture.style}  />
             {editing.profilePictureContainer ? <EditImage /> : null}
           </div>
-          <ContentEditable id="fullName" className={styles.profileName} html={recipe.fullName} disabled={disabled} onChange={this.update} />
-          <ContentEditable id="company"  className={styles.profileCompany} html={recipe.company} disabled={disabled} onChange={this.update} />
+          <h3><ContentEditable id="fullName" className={styles.profileName} html={recipe.fullName} disabled={disabled} onChange={this.update} /></h3>
+          <h3><ContentEditable id="company"  className={styles.profileCompany} html={recipe.company} disabled={disabled} onChange={this.update} /></h3>
           <ContentEditable id="companyLocation"  className={styles.profileCompanyLocation} html={recipe.companyLocation} disabled={disabled} onChange={this.update} />
-          <ContentEditable  id="profileSummary" className={styles.profileSummary} html={recipe.profileSummary} disabled={disabled} onChange={this.update} />
+          <em><ContentEditable  id="profileSummary" className={styles.profileSummary} html={recipe.profileSummary} disabled={disabled} onChange={this.update} /></em>
         </div>
       </div>
     )
