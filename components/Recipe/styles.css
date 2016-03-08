@@ -76,3 +76,28 @@
 	float: left;
 	width: 70%;
 }
+
+.imageContainer {
+	position: relative;
+	overflow: hidden;
+	height: 200px;
+}
+
+.imageContainer img {
+	position: absolute;
+}
+
+.editImage {
+	font-size: 24px;
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+.zoomIn {
+	composes: plusFont from '../../commonStyles/colors.css';
+}
+
+.zoomOut {
+	composes: minusFont from '../../commonStyles/colors.css';
+}
