@@ -19,14 +19,14 @@ const Tech = React.createClass({
             <Grid>
                 <h2>What is a Tech Page?</h2>
                 <p className="lead">
-				A Tech Page is a page that consists of a puzzle attached with its answer, interesting facts/images, or an article, all relating to technliogy. 
+				A Tech Page is a page that consists of a puzzle attached with its answer, interesting facts/images, or an article, all relating to technology. 
 				It’s a fun little page for the chef to enjoy as they are waiting for something to cook. An example page will be up soon!							
 				</p>
 				 <hr/>
 				<h2> Rules: </h2>
 				<ol>
 				<li className={styles.listitem}> The page must be a <b>PDF</b> file. </li>
-				<li className={styles.listitem}> The page must have a resliution of: <b>300 DPI.</b> <br/>
+				<li className={styles.listitem}> The page must have a resolution of: <b>300 DPI.</b> <br/>
 				This is to fit an <b>8.5in x 11in (21cm x 28cm)</b> page. <br/>In pixels: 2551px x 3295px.</li>
 				<li className={styles.listitem}> The total file size must <b>not exceed: 5MB</b></li>
 				<li className={styles.listitem}> The content must have a techy piece to it (a puzzle or article).</li>
@@ -44,11 +44,11 @@ const Tech = React.createClass({
 				<h2>Submit a Tech Page</h2>
                 <p className="small"> <b>*All fields are required.</b></p>
                 <form onSubmit={this.submit} ref="form">
-                    <Input type="text" name="firstName" label="First Name" placehlider="Jane" ref="firstName" required />
-                    <Input type="text" name="lastName" label="Last Name" placehlider="Doe" ref="lastName" required />
-                    <Input type="email" name="email" label="Office Email Address" placehlider="jdoe@cimpress.com" ref="email" required/>
-                    <Input type="text" name="office" label="Business Unit and Office Location" placehlider="Vistaprint, Waltham" ref="office" required/>
-                    <Input type="file" name="techPage" label="Tech page PDF" help="Resolution should be 300 DPI" ref="file" required/>
+                    <Input type="text" name="firstName" label="First Name" placeholder="Jane" ref="firstName" required />
+                    <Input type="text" name="lastName" label="Last Name" placeholder="Doe" ref="lastName" required />
+                    <Input type="email" name="email" label="Office Email Address" placeholder="janedoe@cimpress.com" ref="email" required/>
+                    <Input type="text" name="office" label="Business Unit and Office Location" placeholder="Vistaprint, Waltham" ref="office" required/>
+                    <Input type="file" name="techPage" label="Tech page PDF" help="Resolution should be 300 DPI." ref="file" required/>
                     <ButtonInput type="submit" value="Submit Tech Page" bsStyle="primary"/>
                 </form>
             </Grid>
@@ -115,7 +115,3 @@ var Message = React.createClass({
 });
 
 export default Tech;
-
-// TODO:
-//      Validation
-//      Set rules (with multer) for file types and size limits
