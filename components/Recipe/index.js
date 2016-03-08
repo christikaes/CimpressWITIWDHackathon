@@ -61,30 +61,32 @@ const Recipe = React.createClass({
             </div>
           </div>
           <table className={styles.table}>
-            <tr>
-              <td className={styles.cell}>
-                <Glyphicon glyph="hourglass" className={styles.glyph}/>
-                <div>
-                  <ContentEditable id="prepTime" html={recipe.prepTime} disabled={false} onChange={this.update} />
+            <tbody>
+              <tr>
+                <td className={styles.cell}>
+                  <Glyphicon glyph="hourglass" className={styles.glyph}/>
+                  <div>
+                    <ContentEditable id="prepTime" html={recipe.prepTime} disabled={false} onChange={this.update} />
+                    <div>to Prep</div>
+                  </div>
+                </td>
+                <td className={styles.cell}>
+                  <Glyphicon glyph="hourglass" className={styles.glyph}/>
+                  <ContentEditable id="cookTime" html={recipe.cookTime} disabled={false} onChange={this.update} />
                   <div>to Prep</div>
-                </div>
-              </td>
-              <td className={styles.cell}>
-                <Glyphicon glyph="hourglass" className={styles.glyph}/>
-                <ContentEditable id="cookTime" html={recipe.cookTime} disabled={false} onChange={this.update} />
-                <div>to Prep</div>
-              </td>
-              <td className={styles.cell}>
-                <Glyphicon glyph="cutlery" className={styles.glyph}/>
-                <ContentEditable id="servings" html={recipe.servings} disabled={false} onChange={this.update} />
-                <div>servings</div>
-              </td>
-              <td className={styles.cell}>
-                <Glyphicon glyph="fire" className={styles.glyph}/>
-                <ContentEditable id="calories" html={recipe.calories} disabled={false} onChange={this.update} />
-                <div>calories</div>
-              </td>
-            </tr>
+                </td>
+                <td className={styles.cell}>
+                  <Glyphicon glyph="cutlery" className={styles.glyph}/>
+                  <ContentEditable id="servings" html={recipe.servings} disabled={false} onChange={this.update} />
+                  <div>servings</div>
+                </td>
+                <td className={styles.cell}>
+                  <Glyphicon glyph="fire" className={styles.glyph}/>
+                  <ContentEditable id="calories" html={recipe.calories} disabled={false} onChange={this.update} />
+                  <div>calories</div>
+                </td>
+              </tr>
+            </tbody>
           </table>
         </div>
         <div className={styles.profile}>

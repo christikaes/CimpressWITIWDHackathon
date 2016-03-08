@@ -1,0 +1,15 @@
+.navBrand{
+	padding: 10px;
+}
+
+.logo {
+	float: left;
+	margin-right: 10px
+}
+
+.title
+{
+	float: left;
+	font-size: 25px;
+	margin: 5px;
+}

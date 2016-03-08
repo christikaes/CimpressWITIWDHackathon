@@ -30,7 +30,6 @@ const CountDown = React.createClass({
   },
   tick: function() {
     var remaining = this.getRemaining();
-    console.log(remaining)
 
     this.setState(remaining);
     if (this.state.days <= 0 && this.state.hours <= 0 && this.state.minutes <= 0 && this.state.seconds <= 0) {
@@ -65,7 +64,7 @@ const CountDown = React.createClass({
           </div>
         </div>
 
-        <h1>Until Submissions Close(EST)</h1>
+        <h3>...until submissions close (EST)</h3>
       </div>
     );
   }
