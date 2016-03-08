@@ -14,7 +14,7 @@ const App = React.createClass({
 		<div>
 	    <h1 className = {styles.title}>Women In Technology Celebrates International Women's Day!</h1>              
         </div>
-		<NavBar />
+		<NavBar/>
         <div>
           {this.props.children}
         </div>

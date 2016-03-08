@@ -10,10 +10,7 @@ const Home = React.createClass({
 	<div>
 	<Grid>
 	    <Row>
-	    	<Col xs={1}>
-	    		<img id="logo" src={require("../../img/CWIT_Logo-Cimpress.png")} alt="WIT_logo" width="50" height="80" />
-	    	</Col>
-	    	<Col xs={11}>
+	    	<Col xs={12} className ={styles.title}>
 	    		<h1>  International Women's Day is on March 8th!</h1>
 	    	</Col>
 	    </Row>
@@ -61,6 +58,7 @@ const Home = React.createClass({
 	      </Col>
 		  <Col xs={1}> </Col>
 	    </Row>	
+		<Row><br/> </Row>
 	</Grid>
 	<p className={styles.footer}>
 				*To learn more about the Grace Hopper Conference, visit the <a href="http://ghc.anitaborg.org/" target="_top">main site</a>. The trip to the Grace Hopper Conference will include admission to 3 days of the conference, hotel, and flight. <br/>

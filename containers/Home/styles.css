@@ -1,6 +1,7 @@
 .countdowntimer
 {
 	color: red;		
+	text-align: center;
 }
 
 .countdowntimer .prefix {
@@ -26,11 +27,22 @@
   color: #666;
 }
 
+.title
+{
+	padding-bottom:20px;
+	text-align: center;
+    color: #000;
+	font-family: 'Lato', sans-serif;
+	font-size: 150%;
+	font-weight:800;
+	letter-spacing:1px;
+}
+
 .main  {
 font-family: 'Lato', sans-serif;
 	padding:10px;
 	font-size:14px;
-	width:1240px;
+	width:1100px;
 	border:none;
 	background-color:#EEEEEE;
 	font-weight:400;
@@ -41,20 +53,18 @@ font-family: 'Lato', sans-serif;
 	outline:0px;
 }
 
-
 .submission  {
 font-family: 'Lato', sans-serif;
 	padding:10px;
 	font-size:14px;
-	width:500px;
-	border:none;
+	width:500px;;
 	font-weight:400;
 	letter-spacing:1px;
-	-webkit-border-radius: 2px;
-	-moz-border-radius: 2px;
 	border-radius: 2px;
 	outline:0px;
 	text-align: center;
+	border-color: #EE82EE;
+	border-style:solid;
 }
 
 .footer
