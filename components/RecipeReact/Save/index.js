@@ -16,9 +16,9 @@ class Save extends Component {
           <Glyphicon glyph="floppy-save" /> <br/>
           Save
         </Button>
-        <Button bsSize="large" className={stylesDimensions.squareButton} onClick={fetchRetrieveIfNeeded.bind(this, "9a919b2b4e1613f24a4cac08ef86cf5e")}>
-          <Glyphicon glyph="floppy-save" /> <br/>
-          LOAD
+        <Button bsSize="large" className={stylesDimensions.squareButton} href="//FreeHTMLtoPDF.com/?convert&iconsize=32&formdata=1">
+          <Glyphicon glyph="file" /> <br/>
+          Pdf
         </Button>
       </div>
     )

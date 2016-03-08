@@ -36,6 +36,8 @@ function requestSave(recipe) {
 
 function receiveSave(recipe, data) {
   console.log("3.5")
+  let newLocation = window.location.origin + "/recipe/" + data.data.entry_id
+  window.history.pushState("", "", "/recipe/" +  data.data.entry_id);
   return {
     type: "RECEIVE_SAVE",
     recipe,
@@ -61,7 +63,7 @@ function fetchSave(recipe) {
     })
     .then(req => req.json())
     .then(json => {
-        dispatch(loading(false)) 
+        dispatch(loading(false))
         dispatch(receiveSave(recipe, json))
     })
 

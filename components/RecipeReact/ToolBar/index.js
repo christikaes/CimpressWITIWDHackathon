@@ -13,8 +13,6 @@ const RecipeEditor = React.createClass({
 	        <RecipeSave />
 
 	        <RecipeUndoRedo />
-	      	
-	        <RecipeNext />
 	    
       </div>
     )

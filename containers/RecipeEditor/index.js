@@ -19,7 +19,7 @@ const RecipeEditor = React.createClass({
       <div className={styles.recipe}>
       	<Loading />
 
-        <div>
+        <div className={styles.heading}>
           <h1> Recipe Editor </h1>
           <div>
             Submit the recipe that you want to share using the form below:
