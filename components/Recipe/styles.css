@@ -1,16 +1,4 @@
-* {
-	box-sizing: border-box;
-}
-[contenteditable="true"] {
-	cursor: pointer;
-}
-
-[contenteditable="true"]:hover {
-	border: 1px dashed blue;
-}
-
-
-.recipe {
+.recipe{
 	margin: 20px auto;
 	composes: page from '../../commonStyles/dimensions.css';
 	composes: page from '../../commonStyles/boxShadow.css';
@@ -18,45 +6,98 @@
 	/*composes: rightPageInset from '../../commonStyles/boxShadow.css';*/
 
 	overflow: hidden;
-
-	display: -webkit-flex;
-	display: flex;
-	flex-direction: column;
 }
 
-.contentContainer {
-	flex-grow: 5;
-
-	display: -webkit-flex;
-	display: flex;
-	flex-direction: row;
+.profile {
+	padding: 10px;
+	float: right;
+	height: 100%;
+	width: 30%;
+	background-color: rgb(121,222,201);
+	text-align: center;
 }
 
-.foodImgLeft {
-	flex-grow: 1;
-	min-width: 20px;
-
+.profilePicture {
 	/*TODO ADD IMAGE*/
-	composes: image from '../../commonStyles/colors.css';
+	margin: auto;
+	width: 100%;
+	height: 200px;
+	background-color: #ccc;
+	margin-bottom: 15px;
 }
 
-.recipeContentContainer {
-	flex-grow: 8;
-
-	/*Hack?*/
-	display: -webkit-flex;
-	display: flex;
-	flex-direction: row;
+.profileName,
+.profileCompany,
+.profileCompanyLocation {
+	margin: 5px auto;
 }
 
-.foodImgRight {
-	flex-grow: 3;
-	min-width: 100px;
-
-	composes: image from '../../commonStyles/colors.css';
+.profileSummary {
+	margin-top: 15px;
 }
 
-.profileContainer{
-	composes: profile from '../../commonStyles/colors.css';
-	flex-grow: 1;
+
+.content {
+	float: left;
+	height: 100%;
+	width: 70%;
+	min-width: 200px;
+	padding: 10px;
+}
+
+
+.foodPicture {
+	/*TODO ADD IMAGE*/
+	margin: auto;
+	width: 100%;
+	height: 200px;
+	background-color: #ccc;
+	margin-bottom: 15px;
+}
+
+.title {
+	text-align: center;
+	font-size: 32px;
+	font-style: Garamond;
+}
+
+.caption {
+	text-align: center;
+	font-size: 24px;
+	font-style: Garamond;
+}
+
+.ingredients{
+	float: left;
+	width: 30%;
+}
+
+.directions {
+	float: left;
+	width: 70%;
+}
+
+.imageContainer {
+	position: relative;
+	overflow: hidden;
+	height: 200px;
+}
+
+.imageContainer img {
+	position: absolute;
+}
+
+.editImage {
+	font-size: 24px;
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+.zoomIn {
+	composes: plusFont from '../../commonStyles/colors.css';
+}
+
+.zoomOut {
+	composes: minusFont from '../../commonStyles/colors.css';
 }

@@ -5,10 +5,25 @@
         "fullName": "Jake Thedog",
         "company" : "Vistaprint",
         "companyLocation": "Waltham, USA",
-        "profileImg" : "(TODO) profileImg",
         "profileSummary" : "summary symmarysummary symmarysummary symmarysummary symmarysummary symmarysummary symmarysummary symmarysummary symmary",
-        "foodImg": "(TODO/optional) FoodImg",
-        "foodImgCrop": "(TODO) Food Image Crop",
+        "profilePicture": {
+                "src" : "profilePlaceholder.jpg",
+                "style": { 
+                    "top" : "-50px",
+                    "left" : "0px",
+                    "width" : "280px",
+                    "height" : "250px"
+                }
+            },
+        "foodPicture": {
+                "src" : "foodPlaceholder.png",
+                "style": { 
+                    "top" : "-100px",
+                    "left" : "0px",
+                    "width" : "700px",
+                    "height" : "400px"
+                }
+            },
         "ingredients": "<ul><li>Ingredient 1</li> <li>Ingredient 2</li>",
         "directions": "<ol><li>Direction 1</li> <li>Direction 2</li>",
         "prepTime": "30 min",
