@@ -49,5 +49,9 @@
 .footer
 {
 	text-align: center;
-    padding: 50px;
+    background: #000;
+    padding: 2em;
+    color: #fff;
+	width: 100%;
+    z-index:9999;
 }
