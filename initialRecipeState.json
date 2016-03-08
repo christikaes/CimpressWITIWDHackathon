@@ -1,29 +1,29 @@
 {
     "present": {
-        "title": "Everything Burrito",
-        "caption": "You're my everything buritto",
-        "fullName": "Jake Thedog",
+        "title": "Doe's Dark Brownies",
+        "caption": "These Brownies will change your life",
+        "fullName": "Jane Doe",
         "company" : "Vistaprint",
         "companyLocation": "Waltham, USA",
-        "profileSummary" : "summary symmarysummary symmarysummary symmarysummary symmarysummary symmarysummary symmarysummary symmarysummary symmary",
+        "profileSummary" : "Hi! I'm Jane, a software developer at Vistaprint. I work on the front-end for the studio team. In my spare time I love reading and jogging. <br/> I've been living in Boston for over 10 years now, but I'm originally from Texas. This recipe is a hand-me-down from my grandmother and I'm excited to share it with you! ",
         "profilePicture": {
-                "src" : "profilePlaceholder.jpg",
+                "src" : "profilePlaceholderPic.jpg",
                 "style": { 
-                    "top" : "-20px",
-                    "left" : "-20px",
+                    "top" : "0px",
+                    "left" : "-50px",
                     "height" : "250px",
                     "width": "auto"
                 }
             },
         "foodPicture": {
-                "src" : "foodPlaceholder.png",
+                "src" : "foodPlaceholderPic.jpg",
                 "style": { 
                     "top" : "-100px",
                     "left" : "0px",
                     "height" : "400px"
                 }
             },
-        "ingredients": "<ul><li>Ingredient 1</li> <li>Ingredient 2</li>",
+        "ingredients": "<ul><li>1/2 cup butter</li><li>1 cup white sugar</li><li>2 eggs</li><li>1 teaspoon vanilla extract</li><li>1/3 cup unsweetened cocoa powder</li><li>1/2 cup all-purpose flour</li><li>1/4 teaspoon salt</li><li>1/4 teaspoon baking powder</li></ul>",
         "directions": "<ol><li>Direction 1</li> <li>Direction 2</li>",
         "prepTime": "30 min",
         "cookTime": "40 min",
