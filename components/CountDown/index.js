@@ -45,6 +45,9 @@ const CountDown = React.createClass({
   render: function() {
     return (
       <div className={styles.container}>
+
+        <h3>Only</h3>
+
         <div className={styles.countdown}>
           <div className={styles.block}>
             <span className={styles.time}>{this.state.days}</span>
@@ -64,7 +67,7 @@ const CountDown = React.createClass({
           </div>
         </div>
 
-        <h3>...until submissions close (EST)</h3>
+        <h3>left to submit a: </h3>
       </div>
     );
   }

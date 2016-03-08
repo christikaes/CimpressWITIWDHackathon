@@ -28,7 +28,7 @@ export default class NavBar extends Component {
                 <NavItem eventKey={1}>Home</NavItem>
             </LinkContainer>
             <LinkContainer to="/tech">
-                <NavItem eventKey={2}>Tech</NavItem>
+                <NavItem eventKey={2}>Tech Page</NavItem>
             </LinkContainer>
             <LinkContainer to="/recipe">
                 <NavItem eventKey={3}>Recipe</NavItem>
