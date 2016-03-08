@@ -73,7 +73,6 @@ font-family: 'Lato', sans-serif;
     background: #000;
     padding: 2em;
     color: #fff;
-    position: fixed;
 	width: 100%;
     z-index:9999;
 }
