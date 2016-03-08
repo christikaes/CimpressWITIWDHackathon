@@ -19,21 +19,19 @@ const Tech = React.createClass({
             <Grid>
                 <h2>What is a Tech Page?</h2>
                 <p className="lead">
-				A Tech Page is a page that consists of a puzzle attached with its answer, interesting facts/images, or an article, all relating to technology. 
-				It’s a fun little page for the chef to enjoy as they are waiting for something to cook. An example page will be up soon!							
-				</p>
+			A Tech Page is a page that consists of a puzzle attached with its answer, interesting facts/images, or an article, all relating to technology. 
+			It’s a fun little page for the chef to enjoy as they are waiting for something to cook. An example page will be up soon!							
+		</p>
 				 <hr/>
 				<h2> Rules: </h2>
 				<ol>
 				<li className={styles.listitem}> The page must be a <b>PDF</b> file. </li>
-				<li className={styles.listitem}> The page must have a resolution of: <b>300 DPI.</b> <br/>
-				This is to fit an <b>8.5in x 11in (21cm x 28cm)</b> page. <br/>In pixels: 2551px x 3295px.</li>
+				<li className={styles.listitem}> The page must have dimensions of <b>19cm x 21cm</b> at a resolution of <b>300 DPI.</b> (in pixels: 2244px x 2480px)<br/>
+				(We will add your photo and bio information in a sidebar beside your page.)
 				<li className={styles.listitem}> The total file size must <b>not exceed: 5MB</b></li>
 				<li className={styles.listitem}> The content must have a techy piece to it (a puzzle or article).</li>
 				<li className={styles.listitem}> If the content has an <b>article</b> that you have not written yourself, then you must include a source to credit the original author.</li>
 				<li className={styles.listitem}> If the content has a <b>puzzle</b>, then you must include the answer upside down on the bottom of the page.</li>
-				<li className={styles.listitem}> Please leave a <b>1in (2.54cm) header space</b> on top so we can display your name and office information to credit you for your submission.</li>
-				</ol>
                 <Message 
                     visibilityClass={this.state.showStatusMessage ? "show" : "hidden"}
                     statusMessage={this.state.statusMessage}
