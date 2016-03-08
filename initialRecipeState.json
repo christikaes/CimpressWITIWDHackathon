@@ -10,7 +10,7 @@
                 "src" : "profilePlaceholderPic.jpg",
                 "style": { 
                     "top" : "0px",
-                    "left" : "-50px",
+                    "left" : "-85px",
                     "height" : "250px",
                     "width": "auto"
                 }
