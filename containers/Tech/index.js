@@ -20,7 +20,7 @@ const Tech = React.createClass({
                 <h2>What is a Tech Page?</h2>
                 <p className="lead">
 				A Tech Page is a page that consists of a puzzle attached with its answer, interesting facts/images, or an article, all relating to technliogy. 
-				It’s a fun little page for the chef to enjoy as they are waiting for something to cook. See our example here link to example.				
+				It’s a fun little page for the chef to enjoy as they are waiting for something to cook. An example page will be up soon!							
 				</p>
 				 <hr/>
 				<h2> Rules: </h2>
@@ -32,7 +32,7 @@ const Tech = React.createClass({
 				<li className={styles.listitem}> The content must have a techy piece to it (a puzzle or article).</li>
 				<li className={styles.listitem}> If the content has an <b>article</b> that you have not written yourself, then you must include a source to credit the original author.</li>
 				<li className={styles.listitem}> If the content has a <b>puzzle</b>, then you must include the answer upside down on the bottom of the page.</li>
-				<li className={styles.listitem}> Please leave a <b>2in (5.08cm) header space</b> on top so we can display your name and office information to credit you for your submission.</li>
+				<li className={styles.listitem}> Please leave a <b>1in (2.54cm) header space</b> on top so we can display your name and office information to credit you for your submission.</li>
 				</ol>
                 <Message 
                     visibilityClass={this.state.showStatusMessage ? "show" : "hidden"}
