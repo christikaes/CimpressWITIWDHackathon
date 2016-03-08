@@ -8,22 +8,23 @@ const Home = React.createClass({
   render: function() {
     return (
 	<div>
+      <div  className={styles.container}>
 	  <Grid>
 	    <Row>
             <Col xs={12} className={styles.header}>
-                <img src={require("../../img/CimpressLogo.png")} alt="Recipe image" height="50" />
+                <img src={require("../../img/CimpressLogo.png")} alt="Recipe image" height="40" />
                 <b> women in technology </b>
-                <img src={require("../../img/CWIT_Logo-Cimpress.png")} alt="Recipe image" height="70" />
-            </Col>
-        </Row>
-        <Row>
-            <Col xs={12} className={styles.presents}>
-                In celebration of International Women's Day and Women's History Month, we present
+                <img src={require("../../img/CWIT_Logo-Cimpress.png")} alt="Recipe image" height="50" />
             </Col>
         </Row>
         <Row>
             <Col xs={12} className={styles.title}>
-                Global Cookbook Contest
+                <div className={styles.presents}>
+                    In celebration of International Women's Day and Women's History Month, we present
+                </div>
+                <div>
+                    Global Cookbook Contest
+                </div>
             </Col>
         </Row>
 	    <Row>
@@ -59,7 +60,10 @@ const Home = React.createClass({
 	            <Button>Learn More</Button>
 	          </LinkContainer>
 	      </Col>
-          <Col xs={12} md={5} mdOffset={2} className={styles.submission}>
+          <Col xsHidden md={2} className={styles.or}>
+            or
+          </Col>
+          <Col xs={12} md={5} className={styles.submission}>
               <LinkContainer to="/recipe">
                 <img src={require("../../img/recipe.png")} alt="Recipe image" width="150" height="150" />
               </LinkContainer>
@@ -75,6 +79,7 @@ const Home = React.createClass({
 			For more details email the <a href="mailto:WITExternalConnectionsCommitee@cimpress.com?Subject=WIT%20IWD%20Question" target="_top">WITExternalConnectionsCommitee</a>.
 		</div>
       </Grid>
+      </div>
 	</div>
 	)
   }
