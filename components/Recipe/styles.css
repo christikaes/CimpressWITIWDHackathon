@@ -12,7 +12,7 @@
 	padding: 10px;
 	float: right;
 	height: 100%;
-	width: 30%;
+	width: 250px;
 	background-color: rgb(121,222,201);
 	text-align: center;
 }
@@ -40,7 +40,7 @@
 .content {
 	float: left;
 	height: 100%;
-	width: 70%;
+	width: 750px;
 	min-width: 200px;
 	padding: 10px;
 }
@@ -100,4 +100,8 @@
 
 .zoomOut {
 	composes: minusFont from '../../commonStyles/colors.css';
+}
+
+.editable:hover {
+	border: 1px dashed blue;
 }

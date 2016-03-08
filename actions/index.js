@@ -8,6 +8,15 @@ export function update(key, value) {
   }
 }
 
+// Editing
+export function updateEditing(key, value) {
+  return {
+    type: 'UPDATE_EDITING',
+    key: key,
+    value: value
+  }
+}
+
 // Loading
 export function loading(state) {
   return {
