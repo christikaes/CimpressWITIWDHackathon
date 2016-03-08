@@ -2,9 +2,7 @@ import React from 'react'
 import {Grid, Row, Col, Button} from 'react-bootstrap'
 import { LinkContainer } from 'react-router-bootstrap';
 import styles from './styles.css' 
-import CountDown from 'react-count-down';
-
-var OPTIONS = { endDate: '03/31/2016 11:59 PM', prefix: 'until submission ends! (in EST)' }
+import {CountDown} from '../../components';
 
 const Home = React.createClass({
   render: function() {
@@ -37,8 +35,8 @@ const Home = React.createClass({
 	    <Row>
 	      <Col xs={12}>
 	      		<h2>Timeline </h2>
-				<h3 className={styles.countdowntimer}>
-					<CountDown options={OPTIONS}  />				
+				<h3>
+					<CountDown />				
 				</h3>
 	      </Col>
 	    </Row>

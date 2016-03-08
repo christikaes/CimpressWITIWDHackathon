@@ -1,5 +1,6 @@
 export {default as NavBar} from './NavBar';
 export {default as Loading} from './Loading';
+export {default as CountDown} from './CountDown';
 export {default as Recipe} from './Recipe';
 export {default as RecipeReact} from './RecipeReact';
 export {default as RecipeHeader} from './RecipeReact/Header';
