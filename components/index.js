@@ -14,3 +14,4 @@ export {default as RecipeSave} from './RecipeReact/Save';
 export {default as RecipeUndoRedo} from './RecipeReact/UndoRedo';
 export {default as RecipeNext} from './RecipeReact/Next';
 export {default as RecipeToolBar} from './RecipeReact/ToolBar';
+export {default as RecipeSubmission} from './RecipeSubmission';

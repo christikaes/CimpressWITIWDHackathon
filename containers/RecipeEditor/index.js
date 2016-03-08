@@ -1,7 +1,7 @@
 import React, {PropTypes} from 'react'
 import {bindActionCreators} from 'redux'
 import { connect } from 'react-redux'
-import {Recipe, RecipeToolBar, Loading} from '../../components'
+import {Recipe, RecipeSubmission, RecipeToolBar, Loading} from '../../components'
 import { fetchRetrieveIfNeeded } from '../../actions'
 import styles from './styles.css' 
 
@@ -19,7 +19,16 @@ const RecipeEditor = React.createClass({
       <div className={styles.recipe}>
       	<Loading />
 
+        <div>
+          <h1> Recipe Editor </h1>
+          <div>
+            Submit the recipe that you want to share using the form below:
+          </div>
+        </div>
+
         <Recipe />
+
+        <RecipeSubmission />
 
         <RecipeToolBar />
       

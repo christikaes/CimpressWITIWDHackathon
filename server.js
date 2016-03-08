@@ -33,6 +33,17 @@ var techPageStorage = multer.diskStorage({
 });
 var upload = multer({ storage: techPageStorage });
 
+
+var recipeImageStorage = multer.diskStorage({
+    destination: 'imageUploads/',
+    filename: function(req, file, cb) {
+        cb(null, req.body.lastName + "-" + Date.now() + ".png"); 
+        // TODO: enforce PDF uploads only, or add file extension based on file type
+        //mime.extension(file.mimetype)
+    }
+});
+var uploadImage = multer({ storage: recipeImageStorage });
+
 var db = require('./db.js');
 
 
@@ -54,6 +65,26 @@ app.post('/tech-form', upload.single('techPage'), function(req, res){
 		}
 		else{
 			res.status(500).send("failed to post tech contest entry");
+		}
+	});
+});
+
+
+// Handle a Recipe page submission
+app.post('/recipe-submission', upload.single('techPage'), function(req, res){
+	console.log("posting recipe contest entry");
+
+    var data = req.body;
+    data.fileName = req.file.filename;
+
+    console.log(data);
+
+	db.update(data, "design_contest_submissions", function(status){
+		if(status){
+			res.status(200).send("successfully posted recipe contest entry");
+		}
+		else{
+			res.status(500).send("failed to post recipe contest entry");
 		}
 	});
 });
