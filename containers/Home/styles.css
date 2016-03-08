@@ -1,79 +1,53 @@
-.countdowntimer
-{
-	color: red;		
+.header{
 	text-align: center;
-}
-
-.countdowntimer .prefix {
-  color: black;  
-}
-/*this was from count down example.*/
-.react-count-down {
-    margin: 0;
-    padding: 2em;
-}
-
-.react-count-down .prefix {
-  font-size: 120%;
-  font-weight: 200;
-  line-height: 1.5;
-  color: #03CC85;  
-}
-
-.react-count-down .date {
-  font-size: 120%;
-  font-weight: 200;
-  line-height: 1.5;
-  color: #666;
-}
-
-.title
-{
-	padding-bottom:20px;
-	text-align: center;
-    color: #000;
 	font-family: 'Lato', sans-serif;
-	font-size: 150%;
+	font-size: 50px;
 	font-weight:800;
-	letter-spacing:1px;
+	letter-spacing: -3px;
+	margin: 50px auto;
+}
+
+.header img {
+	vertical-align: middle;
+	margin-left: 20px;
+	margin-right: 5px;
+}
+
+.presents{
+	text-align: center;
+	font-family: 'Lato', sans-serif;
+	font-size: 20px;
+	letter-spacing: 1px;
+}
+
+.title {
+	background:url("../../img/photobook.jpg") no-repeat;
+	background-position-x: 100%;
+	background-size: contain;
+	height: 100px;
+	line-height: 100px;
+	font-size: 50px;
+	text-align: center;
 }
 
 .main  {
-font-family: 'Lato', sans-serif;
-	padding:10px;
-	font-size:14px;
-	width:1100px;
-	border:none;
-	background-color:#EEEEEE;
-	font-weight:400;
-	letter-spacing:1px;
-	-webkit-border-radius: 2px;
-	-moz-border-radius: 2px;
-	border-radius: 2px;
-	outline:0px;
+	margin-top: 50px;
 }
 
 .submission  {
-font-family: 'Lato', sans-serif;
-	padding:10px;
-	font-size:14px;
-	width:500px;;
-	font-weight:400;
-	letter-spacing:1px;
-	border-radius: 2px;
-	outline:0px;
+	border-radius: 5px;
 	text-align: center;
-	border-color: #EE82EE;
-	border-style:solid;
+	height: 100%;
+	background-color: #ccc;
+	padding: 20px;
+}
+
+.submission img {
+	cursor: pointer;
 }
 
 .footer
 {
 	text-align: center;
-    background: #000;
-    padding: 2em;
-    color: #fff;
-    position: fixed;
-	width: 100%;
-    z-index:9999;
+    padding: 50px;
 }

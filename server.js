@@ -12,6 +12,7 @@ app.use(webpackDevMiddleware(compiler, { noInfo: true, publicPath: config.output
 app.use(webpackHotMiddleware(compiler))
 
 app.use('/imageUploads', express.static('imageUploads'));
+app.use('/public', express.static('public'));
 
 
 // TODO MOVE THIS TO MIDDLEWARE

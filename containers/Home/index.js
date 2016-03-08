@@ -8,12 +8,24 @@ const Home = React.createClass({
   render: function() {
     return (
 	<div>
-	<Grid>
+	  <Grid>
 	    <Row>
-	    	<Col xs={12} className ={styles.title}>
-	    		<h1>  International Women's Day is on March 8th!</h1>
-	    	</Col>
-	    </Row>
+            <Col xs={12} className={styles.header}>
+                <img src={require("../../img/CimpressLogo.png")} alt="Recipe image" height="50" />
+                <b> women in technology </b>
+                <img src={require("../../img/CWIT_Logo-Cimpress.png")} alt="Recipe image" height="70" />
+            </Col>
+        </Row>
+        <Row>
+            <Col xs={12} className={styles.presents}>
+                In celebration of International Women's Day and Women's History Month, we present
+            </Col>
+        </Row>
+        <Row>
+            <Col xs={12} className={styles.title}>
+                Global Cookbook Contest
+            </Col>
+        </Row>
 	    <Row>
 	      <Col xs={12} className={styles.main}>
 	 		  <p>
@@ -31,40 +43,40 @@ const Home = React.createClass({
 	    </Row>
 	    <Row>
 	      <Col xs={12}>
-	      		<h2>Timeline </h2>
-				<h3>
-					<CountDown />				
-				</h3>
+			<h3>
+				<CountDown />				
+			</h3>
 	      </Col>
 	    </Row>
 	    <Row>
-		<br/>
 	      <Col xs={12} md={5} className={styles.submission}>
-	          <img src={require("../../img/recipe.png")} alt="Recipe image" width="100" height="100" />
-	          <h2>Recipe</h2>
-	          <p>Submit your favorite recipe, a unique cultural specialty, or something for fun! </p>
-	          <LinkContainer to="/recipe">
-	            <Button>Learn More</Button>
-	          </LinkContainer>
-	      </Col>
-		   <Col xs={1}> </Col>
-	      <Col xs={12} md={5} className={styles.submission}>
-	          <img src={require("../../img/puzzle.png")} alt="Puzzle image" width="100" height="100" />
+	          <LinkContainer to="/tech">
+                <img src={require("../../img/code.png")} alt="Code image" width="150" height="150" />
+              </LinkContainer>
 	          <h2>Tech Page</h2>
 	          <p>Submit an interesting article on an innovative technology or a fun yet challenging puzzle!</p>
 	          <LinkContainer to="/tech">
 	            <Button>Learn More</Button>
 	          </LinkContainer>
 	      </Col>
-		  <Col xs={1}> </Col>
-	    </Row>	
-		<Row><br/> </Row>
-	</Grid>
-	<p className={styles.footer}>
-				*To learn more about the Grace Hopper Conference, visit the <a href="http://ghc.anitaborg.org/" target="_top">main site</a>. The trip to the Grace Hopper Conference will include admission to 3 days of the conference, hotel, and flight. <br/>
-				For more details email the <a href="mailto:WITExternalConnectionsCommitee@cimpress.com?Subject=WIT%20IWD%20Question" target="_top">WITExternalConnectionsCommitee</a>.
-	</p>
-	</div>)
+          <Col xs={12} md={5} mdOffset={2} className={styles.submission}>
+              <LinkContainer to="/recipe">
+                <img src={require("../../img/recipe.png")} alt="Recipe image" width="150" height="150" />
+              </LinkContainer>
+              <h2>Recipe</h2>
+              <p>Submit your favorite recipe, a unique cultural specialty, or something for fun! </p>
+              <LinkContainer to="/recipe">
+                <Button>Learn More</Button>
+              </LinkContainer>
+          </Col>
+	    </Row>
+		<div className={styles.footer}>
+			*To learn more about the Grace Hopper Conference, visit the <a href="http://ghc.anitaborg.org/" target="_top">main site</a>. The trip to the Grace Hopper Conference will include admission to 3 days of the conference, hotel, and flight. <br/>
+			For more details email the <a href="mailto:WITExternalConnectionsCommitee@cimpress.com?Subject=WIT%20IWD%20Question" target="_top">WITExternalConnectionsCommitee</a>.
+		</div>
+      </Grid>
+	</div>
+	)
   }
 })
 
