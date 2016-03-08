@@ -1,6 +1,7 @@
 .countdowntimer
 {
 	color: red;		
+	text-align: center;
 }
 
 .countdowntimer .prefix {
@@ -24,6 +25,17 @@
   font-weight: 200;
   line-height: 1.5;
   color: #666;
+}
+
+.title
+{
+	text-align: left;
+    color: #000;
+	width: 100%;
+	font-family: 'Lato', sans-serif;
+	font-size: 30px;
+	font-weight:400;
+	letter-spacing:1px;
 }
 
 .main  {
