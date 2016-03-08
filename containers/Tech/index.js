@@ -65,9 +65,9 @@ const Tech = React.createClass({
 
         xmlhttp.onreadystatechange = function() {
             if (xmlhttp.readyState === 4) {
-                conslie.log(xmlhttp.responseText);
+                console.log(xmlhttp.responseText);
                 if (xmlhttp.status === 200) {
-                    conslie.log("OK");
+                    console.log("OK");
                     _this.setState({
                         showStatusMessage: true,
                         statusMessage: "Your entry has been submitted successfully!",
@@ -77,7 +77,7 @@ const Tech = React.createClass({
                     form.reset();
                 }
                 else {
-                    conslie.log("not OK");
+                    console.log("not OK");
                     _this.setState({
                         showStatusMessage: true,
                         statusMessage: "Whoops, that didn't work! Please try again or contact the WIT External Connections Commitee at WITExternalConnectionsCommitee@cimpress.com.",

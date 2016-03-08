@@ -16,7 +16,7 @@ class Save extends Component {
           <Glyphicon glyph="floppy-save" /> <br/>
           Save
         </Button>
-        <Button bsSize="large" className={stylesDimensions.squareButton} href="//FreeHTMLtoPDF.com/?convert&iconsize=32&formdata=1">
+        <Button bsSize="large" className={stylesDimensions.squareButton} href={"//FreeHTMLtoPDF.com/?convert="+window.location.origin+"/recipepreview/"+recipe.entry_id+"&size=US_Letter&orientation=landscape&framesize=800&language=de"}>
           <Glyphicon glyph="file" /> <br/>
           Pdf
         </Button>
