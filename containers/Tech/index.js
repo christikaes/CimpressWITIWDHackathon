@@ -10,7 +10,7 @@ const Tech = React.createClass({
             showStatusMessage: false,
             statusMessage: "",
             statusType: "info",
-            allowMessageDismissal: false
+            submitting: false
         }
     },
 
@@ -33,22 +33,22 @@ const Tech = React.createClass({
 				<li className={styles.listitem}> If the content has an <b>article</b> that you have not written yourself, then you must include a source to credit the original author.</li>
 				<li className={styles.listitem}> If the content has a <b>puzzle</b>, then you must include the answer upside down on the bottom of the page.</li>
                 </ol>
+                 <hr/>
+                <h2>Submit a Tech Page</h2>
+                <p className="small"> <b>*All fields are required.</b></p>
                 <Message 
                     visibilityClass={this.state.showStatusMessage ? "show" : "hidden"}
                     statusMessage={this.state.statusMessage}
                     statusType={this.state.statusType}
-                    onDismiss={this.state.allowMessageDismissal ? this.handleAlertDismiss : null}
+                    onDismiss={this.handleAlertDismiss}
                 />
-				 <hr/>
-				<h2>Submit a Tech Page</h2>
-                <p className="small"> <b>*All fields are required.</b></p>
-                <form onSubmit={this.submit} ref="form">
+                <form onSubmit={!this.state.submitting ? this.submit : null} ref="form">
                     <Input type="text" name="firstName" label="First Name" placeholder="Jane" ref="firstName" required />
                     <Input type="text" name="lastName" label="Last Name" placeholder="Doe" ref="lastName" required />
                     <Input type="email" name="email" label="Office Email Address" placeholder="janedoe@cimpress.com" ref="email" required/>
                     <Input type="text" name="office" label="Business Unit and Office Location" placeholder="Vistaprint, Waltham" ref="office" required/>
                     <Input type="file" name="techPage" label="Tech page PDF" help="Resolution should be 300 DPI." ref="file" required/>
-                    <ButtonInput type="submit" value="Submit Tech Page" bsStyle="primary"/>
+                    <ButtonInput type="submit" disabled={this.state.submitting} value={!this.state.submitting ? "Submit Tech Page" : "Submitting your entry..."} bsStyle="primary"/>
                 </form>
             </Grid>
 
@@ -65,13 +65,15 @@ const Tech = React.createClass({
         xmlhttp.onreadystatechange = function() {
             if (xmlhttp.readyState === 4) {
                 console.log(xmlhttp.responseText);
+                _this.setState({
+                    submitting: false
+                })
                 if (xmlhttp.status === 200) {
                     console.log("OK");
                     _this.setState({
                         showStatusMessage: true,
                         statusMessage: "Your entry has been submitted successfully!",
-                        statusType: "success",
-                        allowMessageDismissal: true
+                        statusType: "success"
                     });
                     form.reset();
                 }
@@ -80,22 +82,16 @@ const Tech = React.createClass({
                     _this.setState({
                         showStatusMessage: true,
                         statusMessage: "Whoops, that didn't work! Please try again or contact the WIT External Connections Commitee at WITExternalConnectionsCommitee@cimpress.com.",
-                        statusType: "danger",
-                        allowMessageDismissal: true
+                        statusType: "danger"
                     });
                 }
             }
         };
 
         xmlhttp.open('POST', window.location.origin + "/tech-form", true);
-
         this.setState({
-            showStatusMessage: true,
-            statusMessage: "Submitting your entry...",
-            statusType: "warning",
-            allowMessageDismissal: false
+            submitting: true
         });
-
         xmlhttp.send(formData);
     },
     handleAlertDismiss: function() {
