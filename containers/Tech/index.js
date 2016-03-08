@@ -27,11 +27,12 @@ const Tech = React.createClass({
 				<ol>
 				<li className={styles.listitem}> The page must be a <b>PDF</b> file. </li>
 				<li className={styles.listitem}> The page must have dimensions of <b>19cm x 21cm</b> at a resolution of <b>300 DPI.</b> (in pixels: 2244px x 2480px)<br/>
-				(We will add your photo and bio information in a sidebar beside your page.)
+				(We will add your photo and bio information in a sidebar beside your page.)</li>
 				<li className={styles.listitem}> The total file size must <b>not exceed: 5MB</b></li>
 				<li className={styles.listitem}> The content must have a techy piece to it (a puzzle or article).</li>
 				<li className={styles.listitem}> If the content has an <b>article</b> that you have not written yourself, then you must include a source to credit the original author.</li>
 				<li className={styles.listitem}> If the content has a <b>puzzle</b>, then you must include the answer upside down on the bottom of the page.</li>
+                </ol>
                 <Message 
                     visibilityClass={this.state.showStatusMessage ? "show" : "hidden"}
                     statusMessage={this.state.statusMessage}
