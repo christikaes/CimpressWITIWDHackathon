@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { connect } from 'react-redux'
 import {Grid, Alert, Input, ButtonInput} from 'react-bootstrap';
 
 import styles from './styles.css' 
@@ -19,21 +20,27 @@ const RecipeSubmission = React.createClass({
             <Grid>
 				<h2>Submit your Recipe</h2>
                 <p className="small"> <b>*All fields are required.</b></p>
+                <Message 
+                    visibilityClass={this.state.showStatusMessage ? "show" : "hidden"}
+                    statusMessage={this.state.statusMessage}
+                    statusType={this.state.statusType}
+                    onDismiss={this.handleAlertDismiss}
+                />
                 <form onSubmit={this.submit} ref="form">
-                    <Input type="text" name="firstName" label="First Name" placehlider="Jane" ref="firstName" required />
-                    <Input type="text" name="lastName" label="Last Name" placehlider="Doe" ref="lastName" required />
-                    <Input type="email" name="email" label="Office Email Address" placehlider="jdoe@cimpress.com" ref="email" required/>
-                    <Input type="file" accept="image/*" name="profilePicture" label="Profile Picture" help="Upload your profilePicture here" ref="file" required/>
+                    <Input type="email" name="email" label="Office Email Address" placeholder="jdoe@cimpress.com" ref="email" required/>
                     <ButtonInput type="submit" value="Submit Recipe" bsStyle="primary"/>
                 </form>
             </Grid>
         )
     },
     submit: function(e) {
+        const {recipe} = this.props;
         e.preventDefault();
 
-        var form = ReactDOM.findDOMNode(this.refs.form);
-        var formData = new FormData(form);
+        let data = {};
+        data.recipe = recipe
+        data.email = this.refs.email.getValue();
+
         var xmlhttp = new XMLHttpRequest();
         var _this = this;
 
@@ -70,8 +77,8 @@ const RecipeSubmission = React.createClass({
             statusType: "warning",
             allowMessageDismissal: false
         });
-
-        xmlhttp.send(formData);
+        xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+        xmlhttp.send(JSON.stringify(data));
     },
     handleAlertDismiss: function() {
         this.setState({ showStatusMessage: false });
@@ -88,8 +95,12 @@ var Message = React.createClass({
     }
 });
 
-export default RecipeSubmission;
+const mapStateToProps = (state) => {
+  return {
+    recipe: state.recipe.present
+  }
+}
 
-// TODO:
-//      Validation
-//      Set rules (with multer) for file types and size limits
+export default connect(
+    mapStateToProps
+)(RecipeSubmission)

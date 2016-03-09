@@ -133,13 +133,7 @@ app.post('/recipe-photo-upload', recipeUploader.fields([
 // Handle a Recipe page submission
 app.post('/recipe-submission', function(req, res){
 	console.log("posting recipe contest entry");
-
-    var data = req.body;
-    data.fileName = req.file.filename;
-
-    console.log(data);
-
-	db.update(data, "design_contest_submissions", function(status){
+	db.update(req.body, "recipe_submissions", function(status){
 		if(status){
 			res.status(200).send("successfully posted recipe contest entry");
 		}
