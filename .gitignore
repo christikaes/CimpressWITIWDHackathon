@@ -1,5 +1,3 @@
 node_modules
-uploads/tech/pdfs/*
-uploads/tech/photos/*
 *.pem
 *.log
