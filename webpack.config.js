@@ -47,6 +47,7 @@ module.exports = {
       { test: /\.png(\?v=\d+\.\d+\.\d+)?$/, loader: "file" },
       { test: /\.gif(\?v=\d+\.\d+\.\d+)?$/, loader: "file" },
       { test: /\.jpg(\?v=\d+\.\d+\.\d+)?$/, loader: "file" },
+      { test: /\.pdf(\?v=\d+\.\d+\.\d+)?$/, loader: "file" },
       { test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, loader: "url?limit=10000&mimetype=image/svg+xml" }
     ]
   }
