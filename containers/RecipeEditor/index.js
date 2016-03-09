@@ -35,6 +35,9 @@ const RecipeEditor = React.createClass({
           <p>
             When you are done editing your recipe, fill out the form at the bottom of this page to submit it!
           </p>
+		  <p className={styles.warning}>
+		  <b>NOTE: If your recipe is long and cannot fit in this editor, please contact <a href="mailto:WITExternalConnectionsCommitee@cimpress.com?Subject=WIT%20IWD%20Large%20Recipe" target="_top">WITExternalConnectionsCommitee</a></b>
+		  </p>
         </div>
 
         <Recipe />

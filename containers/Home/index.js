@@ -65,7 +65,7 @@ const Home = React.createClass({
 			  Multiple submissions are allowed and you will receive an additional raffle entry for the category that you had submitted to. The winners of each raffle will win a trip to the upcoming Grace Hopper Conference in Houston Texas!* 
 			  </p>
 			  <p>
-			  <b> Note: Please keep submissions in English. If you need help in translating your recipe or tech page prior to submission, contact the <a href="mailto:WITExternalConnectionsCommitee@cimpress.com?Subject=WIT%20IWD%20Question" target="_top">WITExternalConnectionsCommitee</a>.</b>
+			  <b> NOTE: Please keep submissions in English. If you need help in translating your recipe or tech page prior to submission, contact the <a href="mailto:WITExternalConnectionsCommitee@cimpress.com?Subject=WIT%20IWD%20Question" target="_top">WITExternalConnectionsCommitee</a>.</b>
 			  </p>
 	      </Col>
 	    </Row>

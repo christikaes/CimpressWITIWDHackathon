@@ -23,7 +23,6 @@ const RecipeSubmission = React.createClass({
                     <Input type="text" name="firstName" label="First Name" placehlider="Jane" ref="firstName" required />
                     <Input type="text" name="lastName" label="Last Name" placehlider="Doe" ref="lastName" required />
                     <Input type="email" name="email" label="Office Email Address" placehlider="jdoe@cimpress.com" ref="email" required/>
-                    <Input type="text" name="office" label="Business Unit and Office Location" placehlider="Vistaprint, Waltham" ref="office" required/>
                     <Input type="file" name="profilePicture" label="Profile Picture" help="Upload your profilePicture here" ref="file" required/>
                     <ButtonInput type="submit" value="Submit Recipe" bsStyle="primary"/>
                 </form>
