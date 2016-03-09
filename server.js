@@ -25,13 +25,32 @@ app.use(bodyParser.json()); // for parsing application/json
 // Middleware for handling multipart forms with file uploads
 var multer  = require('multer');
 var techPageStorage = multer.diskStorage({
-    destination: 'uploads/',
+    destination: function(req, file, cb) {
+        var dest = 'uploads/tech/' + (file.fieldname === 'techPage' ? 'pdfs' : 'photos');
+        cb(null, dest);
+    },
     filename: function(req, file, cb) {
-        cb(null, req.body.lastName + "-" + Date.now() + ".pdf"); 
-        // TODO: enforce PDF uploads only, or add file extension based on file type
+        var fname = file.originalname;
+        var ext = fname.substring(fname.lastIndexOf("."));
+        cb(null, req.body.lastName + "-" + Date.now() + ext);
     }
 });
-var upload = multer({ storage: techPageStorage });
+var techUploader = multer({ 
+    storage: techPageStorage,
+    fileFilter: function(req, file, cb) {
+        // Note: This won't stop someone from uploading an image for the page field.
+        var allowedFileFormats = [
+            "image/jpeg",
+            "image/gif",
+            "image/png",
+            "application/pdf"
+        ];
+        cb(null, allowedFileFormats.indexOf(file.mimetype) >= 0);
+    },
+    limits: {
+        fileSize: 5242880
+    }
+});
 
 
 var recipeImageStorage = multer.diskStorage({
@@ -49,13 +68,19 @@ var db = require('./db.js');
 
 
 // Handle a tech page submission
-    // Save uploaded PDF file to server (see above for destination and file name options)
-    // Save other form data including PDF filename
-app.post('/tech-form', upload.single('techPage'), function(req, res){
+    // Save uploaded PDF and photo files to server (see above for destination and file name options)
+    // Save other form data including upload filenames
+// app.post('/tech-form', tech.single('techPage'), function(req, res){
+app.post('/tech-form', techUploader.fields([
+            {name: 'techPage', maxCount: 1},
+            {name: 'photo', maxCount: 1},
+        ]), function(req, res){
+
 	console.log("posting tech contest entry");
 
     var data = req.body;
-    data.fileName = req.file.filename;
+    data.photoFileName = req.files['photo'][0].filename;
+    data.pdfFileName = req.files['techPage'][0].filename;
 
     console.log(data);
 
@@ -71,7 +96,7 @@ app.post('/tech-form', upload.single('techPage'), function(req, res){
 
 
 // Handle a Recipe page submission
-app.post('/recipe-submission', upload.single('techPage'), function(req, res){
+app.post('/recipe-submission', uploadImage.single('techPage'), function(req, res){
 	console.log("posting recipe contest entry");
 
     var data = req.body;

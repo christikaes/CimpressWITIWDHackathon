@@ -20,15 +20,15 @@ const Tech = React.createClass({
                 <h2>What is a Tech Page?</h2>
                 <p className="lead">
 			A Tech Page is a page that consists of a puzzle attached with its answer, interesting facts/images, or an article, all relating to technology. 
-			It’s a fun little page for the chef to enjoy as they are waiting for something to cook. <a href={require("../../public/techPageExample.pdf")}>An example page will be up soon!</a>							
+			It’s a fun little page for the chef to enjoy as they are waiting for something to cook. <a href={require("../../public/techPageExample.pdf")}>Click here for an example!</a>							
 		</p>
 				 <hr/>
 				<h2> Guidelines: </h2>
 				<ol>
 				<li className={styles.listitem}> The page must be a <b>PDF</b> file. </li>
-				<li className={styles.listitem}> The page must have dimensions of <b>19cm x 21cm</b> at a resolution of <b>300 DPI.</b> (in pixels: 2244px x 2480px)<br/>
-				(We will add your photo and bio information in a sidebar beside your page.)</li>
-				<li className={styles.listitem}> The total file size must <b>not exceed: 5MB</b></li>
+				<li className={styles.listitem}> The page must have dimensions of <b>21cm x 21cm</b> at a resolution of <b>300 DPI</b> (in pixels: 2480px x 2480px).<br/>
+				(<b>Note:</b> Your name, office location, bio, and photo will be included in a sidebar beside your page.)</li>
+				<li className={styles.listitem}> The total file size for PDFs and photos must <b>not exceed 5MB</b> each.</li>
 				<li className={styles.listitem}> The content must have a techy piece to it (a puzzle or article).</li>
 				<li className={styles.listitem}> If the content has an <b>article</b> that you have not written yourself, then you must include a source to credit the original author.</li>
 				<li className={styles.listitem}> If the content has a <b>puzzle</b>, then you must include the answer upside down on the bottom of the page.</li>
@@ -47,7 +47,9 @@ const Tech = React.createClass({
                     <Input type="text" name="lastName" label="Last Name" placeholder="Doe" ref="lastName" required />
                     <Input type="email" name="email" label="Office Email Address" placeholder="janedoe@cimpress.com" ref="email" required/>
                     <Input type="text" name="office" label="Business Unit and Office Location" placeholder="Vistaprint, Waltham" ref="office" required/>
-                    <Input type="file" name="techPage" label="Tech page PDF" help="Resolution should be 300 DPI." ref="file" required/>
+                    <Input type="textarea" name="bio" label="Bio" ref="bio" rows="3" maxLength="325" help="Max 325 characters." required/>
+                    <Input type="file" name="photo" label="Your Photo" help="Please provide a photo of yourself to be included with your submission (jpg, gif, or png; 5MB max)." ref="file" required/>
+                    <Input type="file" name="techPage" label="Tech page PDF" help="21x21cm, 300 DPI. 5MB max." ref="file" required/>
                     <ButtonInput type="submit" disabled={this.state.submitting} value={!this.state.submitting ? "Submit Tech Page" : "Submitting your entry..."} bsStyle="primary"/>
                 </form>
             </Grid>
@@ -64,12 +66,12 @@ const Tech = React.createClass({
 
         xmlhttp.onreadystatechange = function() {
             if (xmlhttp.readyState === 4) {
-                console.log(xmlhttp.responseText);
+                // console.log(xmlhttp.responseText);
                 _this.setState({
                     submitting: false
                 })
                 if (xmlhttp.status === 200) {
-                    console.log("OK");
+                    // console.log("OK");
                     _this.setState({
                         showStatusMessage: true,
                         statusMessage: "Your entry has been submitted successfully!",
@@ -78,7 +80,7 @@ const Tech = React.createClass({
                     form.reset();
                 }
                 else {
-                    console.log("not OK");
+                    // console.log("not OK");
                     _this.setState({
                         showStatusMessage: true,
                         statusMessage: "Whoops, that didn't work! Please try again or contact the WIT External Connections Commitee at WITExternalConnectionsCommitee@cimpress.com.",
