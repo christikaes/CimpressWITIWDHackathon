@@ -20,7 +20,7 @@ const Tech = React.createClass({
                 <h2>What is a Tech Page?</h2>
                 <p className="lead">
 			A Tech Page is a page that consists of a puzzle attached with its answer, interesting facts/images, or an article, all relating to technology. 
-			It’s a fun little page for the chef to enjoy as they are waiting for something to cook. <a href={require("../../public/techPageExample.pdf")}>Click here for an example!</a>							
+			It’s a fun little page for the chef to enjoy as they are waiting for something to cook. <a target="_blank" href={require("../../public/techPageExample.pdf")}>Click here for an example!</a>							
 		</p>
 				 <hr/>
 				<h2> Guidelines: </h2>
