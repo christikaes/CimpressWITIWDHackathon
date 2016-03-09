@@ -7,3 +7,11 @@
 	font-size:14px;
 	color: red;
 }
+
+.recipeEditorContainer {
+	background: white;
+	padding: 50px;
+	width: 1200px;
+	margin:auto;
+	composes: recipeEditor from '../../commonStyles/boxShadow.css';
+}

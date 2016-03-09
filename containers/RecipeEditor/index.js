@@ -42,11 +42,16 @@ const RecipeEditor = React.createClass({
 		  </p>
         </div>
 
-        <Recipe />
+        <div className={styles.recipeEditorContainer}>
+
+          <RecipeToolBar />
+
+          <Recipe />
+          
+        </div>
+
 
         <RecipeSubmission />
-
-        <RecipeToolBar />
       
       </div>
     )

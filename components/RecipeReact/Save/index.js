@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 import { fetchSaveIfNeeded, fetchRetrieveIfNeeded } from '../../../actions'
 import {Button, Glyphicon} from 'react-bootstrap'
 import stylesDimensions from '../../../commonStyles/dimensions.css'
+import styles from './styles.css'
 
 class Save extends Component {
 
@@ -11,7 +12,7 @@ class Save extends Component {
     const {fetchSaveIfNeeded, fetchRetrieveIfNeeded, recipe} = this.props;
 
     return (
-      <div>
+      <div className={styles.container}>
         <Button bsSize="large" className={stylesDimensions.squareButton} onClick={fetchSaveIfNeeded.bind(this, recipe)}>
           <Glyphicon glyph="floppy-save" /> <br/>
           Save
