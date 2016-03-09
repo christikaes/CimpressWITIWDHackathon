@@ -13,10 +13,10 @@ const Home = React.createClass({
         <Row>
             <Col xs={12} className={styles.title}>
                 <div className={styles.presents}>
-                    In celebration of International Women's Day and Women's History Month, we present
+                    Women In Technology presents
                 </div>
                 <div>
-                    WIT Global Cookbook
+                    Cimprecipes: A WIT Global Cookbook
                 </div>
             </Col>
         </Row>
@@ -54,7 +54,8 @@ const Home = React.createClass({
 	    </Row>
 			    <Row>
 	      <Col xs={12} className={styles.main}>
-	 		  <p> To commemorate these worldwide events, <a href="https://corewiki.cimpress.net/wiki/Women_In_Technology" target="_blank">Women In Technology</a>  is launching its very first global project: "Cimprecipes". Food represents so much in human culture and history. It’s indicative of our ancestry, the cornerstone of family traditions, and generally something that brings people together. 
+	 		  <p><a href="https://corewiki.cimpress.net/wiki/Women_In_Technology" target="_blank">Women In Technology</a>  is launching its very first global project "Cimprecipes" to commemorate the 2 worldwide events: International Women's Day and Women's History Month. 
+			  Food represents so much in human culture and history. It’s indicative of our ancestry, the cornerstone of family traditions, and generally something that brings people together. 
 			  We thought that one way to connect our international offices would be to assemble “Cimprecipes”; a collection of favorite recipes from all corners of Cimpress.
 			  We need submissions from WIT members and their supporters to build this global cookbook. And to make it more fun, we are also requesting submissions for a TechPage.
 
