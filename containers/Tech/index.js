@@ -46,7 +46,8 @@ const Tech = React.createClass({
                     <Input type="text" name="firstName" label="First Name" placeholder="Jane" ref="firstName" required />
                     <Input type="text" name="lastName" label="Last Name" placeholder="Doe" ref="lastName" required />
                     <Input type="email" name="email" label="Office Email Address" placeholder="janedoe@cimpress.com" ref="email" required/>
-                    <Input type="text" name="office" label="Business Unit and Office Location" placeholder="Vistaprint, Waltham" ref="office" required/>
+                    <Input type="text" name="businessUnit" label="Business Unit" placeholder="Vistaprint" ref="businessUnit" required/>
+                    <Input type="text" name="office" label="Office Location" placeholder="Waltham, USA" ref="office" required/>
                     <Input type="textarea" name="bio" label="Bio" ref="bio" rows="3" maxLength="325" help="Max 325 characters." required/>
                     <Input type="file" name="photo" label="Your Photo" help="Please provide a photo of yourself to be included with your submission (jpg, gif, or png; 5MB max)." ref="file" required/>
                     <Input type="file" name="techPage" label="Tech page PDF" help="21x21cm, 300 DPI. 5MB max." ref="file" required/>
