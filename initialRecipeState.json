@@ -7,16 +7,16 @@
         "companyLocation": "Waltham, USA",
         "profileSummary" : "Hi! I'm Jane, a software developer at Vistaprint. I work on the front-end for the studio team. In my spare time I love reading and jogging. <br/> I've been living in Boston for over 10 years now, but I'm originally from Texas. This recipe is a hand-me-down from my grandmother and I'm excited to share it with you! ",
         "profilePicture": {
-                "src" : "profilePlaceholderPic.jpg",
+                "src" : "profilePlaceholder.jpg",
                 "style": { 
                     "top" : "0px",
-                    "left" : "-85px",
+                    "left" : "-50px",
                     "height" : "250px",
                     "width": "auto"
                 }
             },
         "foodPicture": {
-                "src" : "foodPlaceholderPic.jpg",
+                "src" : "foodPlaceholder.png",
                 "style": { 
                     "top" : "-100px",
                     "left" : "0px",

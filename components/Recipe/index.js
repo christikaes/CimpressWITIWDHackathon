@@ -4,7 +4,9 @@ import { connect } from 'react-redux'
 import { Glyphicon } from 'react-bootstrap'
 import { update, updateEditing } from '../../actions'
 import ContentEditable from 'react-contenteditable'
+import Dropzone from 'react-dropzone'
 import styles from './styles.css'
+import fetch from 'isomorphic-fetch'
 
 const Recipe = React.createClass({
   // TODO: Move this to a different state
@@ -23,8 +25,37 @@ const Recipe = React.createClass({
     update(evt.currentTarget.id, evt.target.value)
   },
 
+  onDrop: function(files) {
+    const {update, recipe} = this.props;
+    let form = new FormData();
+    form.append("photo", files[0]);
+
+    fetch('/recipe-photo-upload', {
+      method: 'post',
+      body: form,
+    }).then(req => req.json())
+    .then(json => {
+        console.log(json.photoName);
+        let placeholderDimensions = {
+          width: 750,
+          height: 250
+        }
+        let pictureType = "foodPicture";
+        let picture = {
+          "src": json.photoName,
+          "style": {
+            "height" : json.dimensions.height,
+            "width" : json.dimensions.width,
+            "top": -json.dimensions.height/2 + placeholderDimensions.height/2,
+            "left": -json.dimensions.width/2 + placeholderDimensions.width/2
+          }
+        } 
+        update(pictureType, picture);
+    })
+  },
+
   render: function() {
-    const imagePath = window.location.origin + "/imageUploads/"
+    const imagePath = window.location.origin + "/uploads/recipe/photos/"
     const {recipe, editing} = this.props;
     const disabled = false;
     let EditImage = React.createClass({
@@ -42,10 +73,10 @@ const Recipe = React.createClass({
     return (
       <div className={styles.recipe}>
         <div className={styles.content}>
-          <div id="foodPictureContainer" className={styles.imageContainer + " " + styles.editable} onMouseEnter={this.showEditImage}  onMouseLeave={this.hideEditImage}>
-            <img id="foodPicture" className={styles.foodPicture} src={imagePath + recipe.foodPicture.src} style={recipe.foodPicture.style} />
-            {editing.foodPictureContainer ? <EditImage /> : null}
-          </div>
+          <Dropzone multiple={false} accept={"image/*"} onDrop={this.onDrop}  id="foodPictureContainer" className={styles.imageContainer + " " + styles.editable} onMouseEnter={this.showEditImage}  onMouseLeave={this.hideEditImage}>
+              <img id="foodPicture" className={styles.foodPicture} src={imagePath + recipe.foodPicture.src} style={recipe.foodPicture.style} />
+              {editing.foodPictureContainer ? <EditImage /> : null}
+          </Dropzone>
           <div className={styles.recipeContent}>
             <h1><ContentEditable id="title" className={styles.title} html={recipe.title} disabled={disabled} onChange={this.update} /></h1>
             <h2><ContentEditable id="caption"  className={styles.caption} html={recipe.caption} disabled={disabled} onChange={this.update} /></h2>

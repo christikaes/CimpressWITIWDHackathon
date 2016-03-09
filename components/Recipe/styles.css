@@ -12,7 +12,7 @@
 	/*padding:10px;*/
 	float: right;
 	height: 100%;
-	width: 200px;
+	width: 250px;
 	background-color: rgb(121,222,201);
 	text-align: center;
 }
@@ -21,7 +21,7 @@
 	/*TODO ADD IMAGE*/
 	margin: auto;
 	width: 100%;
-	height: 200px;
+	height: 250px;
 	background-color: #ccc;
 	margin-bottom: 15px;
 }
@@ -41,7 +41,7 @@
 	/*padding: 10px;*/
 	float: left;
 	height: 100%;
-	width: 800px;
+	width: 750px;
 	min-width: 200px;
 	overflow:hidden;
 }
@@ -50,13 +50,13 @@
 	/*TODO ADD IMAGE*/
 	margin: auto;
 	width: 100%;
-	height: 200px;
+	height: 250px;
 	background-color: #ccc;
 	margin-bottom: 15px;
 }
 
 .recipeContent {
-	height: 450px;
+	height: 400px;
 	padding:10px;
 	padding-left: 40px;
 	overflow: hidden;
@@ -91,7 +91,7 @@
 .imageContainer {
 	position: relative;
 	overflow: hidden;
-	height: 200px;
+	height: 250px;
 }
 
 .imageContainer img {

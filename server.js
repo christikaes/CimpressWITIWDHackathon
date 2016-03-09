@@ -8,11 +8,14 @@ var app = new express()
 var port = process.env.PORT || 3000
 
 var compiler = webpack(config)
+var md5 = require("blueimp-md5");
+var sizeOf = require("image-size");
 app.use(webpackDevMiddleware(compiler, { noInfo: true, publicPath: config.output.publicPath }))
 app.use(webpackHotMiddleware(compiler))
 
 app.use('/imageUploads', express.static('imageUploads'));
 app.use('/public', express.static('public'));
+app.use('/uploads/recipe', express.static('uploads/recipe'));
 
 
 // TODO MOVE THIS TO MIDDLEWARE
@@ -53,15 +56,35 @@ var techUploader = multer({
 });
 
 
-var recipeImageStorage = multer.diskStorage({
-    destination: 'imageUploads/',
+var recipeUploadStorage = multer.diskStorage({
+    destination: function(req, file, cb) {
+        var dest = 'uploads/recipe/' + (file.fieldname === 'recipePage' ? 'pdfs' : 'photos');
+        cb(null, dest);
+    },
     filename: function(req, file, cb) {
-        cb(null, req.body.lastName + "-" + Date.now() + ".png"); 
-        // TODO: enforce PDF uploads only, or add file extension based on file type
-        //mime.extension(file.mimetype)
+        var fname = file.originalname;
+        var ext = fname.substring(fname.lastIndexOf("."));
+        var enc = md5(Date.now());
+        console.log(enc)
+        cb(null, enc + ext);
     }
 });
-var uploadImage = multer({ storage: recipeImageStorage });
+var recipeUploader = multer({ 
+    storage: recipeUploadStorage,
+    fileFilter: function(req, file, cb) {
+        // Note: This won't stop someone from uploading an image for the page field.
+        var allowedFileFormats = [
+            "image/jpeg",
+            "image/gif",
+            "image/png",
+            "application/pdf"
+        ];
+        cb(null, allowedFileFormats.indexOf(file.mimetype) >= 0);
+    },
+    limits: {
+        fileSize: 5242880
+    }
+});
 
 var db = require('./db.js');
 
@@ -94,9 +117,21 @@ app.post('/tech-form', techUploader.fields([
 	});
 });
 
+// Handle a Recipe page submission
+app.post('/recipe-photo-upload', recipeUploader.fields([
+            {name: 'photo', maxCount: 1},
+        ]), function(req, res){
+    console.log("posting recipe-photo-upload");
+    console.log(req.files)
+    // console.log(req.body.photo[0].filename)
+    var photoName = req.files['photo'][0].filename;
+    var dimensions = sizeOf('uploads/recipe/photos/' + photoName);
+
+    res.status(200).send({message: "successfully posted receipe entry", photoName: photoName , dimensions: dimensions});
+});
 
 // Handle a Recipe page submission
-app.post('/recipe-submission', uploadImage.single('techPage'), function(req, res){
+app.post('/recipe-submission', function(req, res){
 	console.log("posting recipe contest entry");
 
     var data = req.body;
