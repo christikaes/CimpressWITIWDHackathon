@@ -25,7 +25,25 @@ const Recipe = React.createClass({
     update(evt.currentTarget.id, evt.target.value)
   },
 
-  onDrop: function(files) {
+  onDropFood: function(files) {
+    let placeholderType = "foodPicture";
+    let placeholderDimensions= {
+      width: 750,
+      height: 250
+    }
+    this.onDrop(files, placeholderType, placeholderDimensions)
+  },
+
+  onDropProfile: function(files) {
+    let placeholderType = "profilePicture";
+    let placeholderDimensions= {
+      width: 250,
+      height: 250
+    }
+    this.onDrop(files, placeholderType, placeholderDimensions)
+  },
+
+  onDrop: function(files, placeholderType, placeholderDimensions) {
     const {update, recipe} = this.props;
     let form = new FormData();
     form.append("photo", files[0]);
@@ -35,12 +53,6 @@ const Recipe = React.createClass({
       body: form,
     }).then(req => req.json())
     .then(json => {
-        console.log(json.photoName);
-        let placeholderDimensions = {
-          width: 750,
-          height: 250
-        }
-        let pictureType = "foodPicture";
         let picture = {
           "src": json.photoName,
           "style": {
@@ -50,7 +62,7 @@ const Recipe = React.createClass({
             "left": -json.dimensions.width/2 + placeholderDimensions.width/2
           }
         } 
-        update(pictureType, picture);
+        update(placeholderType, picture);
     })
   },
 
@@ -58,6 +70,7 @@ const Recipe = React.createClass({
     const imagePath = window.location.origin + "/uploads/recipe/photos/"
     const {recipe, editing} = this.props;
     const disabled = false;
+    const editDisabled = true;
     let EditImage = React.createClass({
         render: function() {
             return (
@@ -73,9 +86,9 @@ const Recipe = React.createClass({
     return (
       <div className={styles.recipe}>
         <div className={styles.content}>
-          <Dropzone multiple={false} accept={"image/*"} onDrop={this.onDrop}  id="foodPictureContainer" className={styles.imageContainer + " " + styles.editable} onMouseEnter={this.showEditImage}  onMouseLeave={this.hideEditImage}>
+          <Dropzone multiple={false} accept={"image/*"} onDrop={this.onDropFood}  id="foodPictureContainer" className={styles.imageContainer + " " + styles.editable} onMouseEnter={this.showEditImage}  onMouseLeave={this.hideEditImage}>
               <img id="foodPicture" className={styles.foodPicture} src={imagePath + recipe.foodPicture.src} style={recipe.foodPicture.style} />
-              {editing.foodPictureContainer ? <EditImage /> : null}
+              {(!editDisabled && editing.foodPictureContainer) ? <EditImage /> : null}
           </Dropzone>
           <div className={styles.recipeContent}>
             <h1><ContentEditable id="title" className={styles.title} html={recipe.title} disabled={disabled} onChange={this.update} /></h1>
@@ -121,10 +134,10 @@ const Recipe = React.createClass({
           </table>
         </div>
         <div className={styles.profile}>
-          <div id="profilePictureContainer" className={styles.imageContainer + " " + styles.editable} onMouseEnter={this.showEditImage}  onMouseLeave={this.hideEditImage}>
+          <Dropzone multiple={false} accept={"image/*"} onDrop={this.onDropProfile}  id="profilePictureContainer" className={styles.imageContainer + " " + styles.editable} onMouseEnter={this.showEditImage}  onMouseLeave={this.hideEditImage}>
             <img id="profilePicture" className={styles.profilePicture} src={imagePath + recipe.profilePicture.src} style={recipe.profilePicture.style}  />
-            {editing.profilePictureContainer ? <EditImage /> : null}
-          </div>
+            {(!editDisabled && editing.foodPictureContainer) ? <EditImage /> : null}
+          </Dropzone>
           <h3><ContentEditable id="fullName" className={styles.profileName} html={recipe.fullName} disabled={disabled} onChange={this.update} /></h3>
           <h3><ContentEditable id="company"  className={styles.profileCompany} html={recipe.company} disabled={disabled} onChange={this.update} /></h3>
           <ContentEditable id="companyLocation"  className={styles.profileCompanyLocation} html={recipe.companyLocation} disabled={disabled} onChange={this.update} />
