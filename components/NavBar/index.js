@@ -15,7 +15,7 @@ export default class NavBar extends Component {
             <LinkContainer to="/home">
               <div>
                 <img className={styles.logo} src={require("../../img/CWIT_Logo-Cimpress.png")} alt="WIT_logo" width="20" height="30" />
-                <div className={styles.title}> Cimpress Women In Technology </div>
+                <div className={styles.title}> Women In Technology </div>
               </div>
             </LinkContainer>
             
