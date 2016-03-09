@@ -28,7 +28,7 @@
         "prepTime": "30 min",
         "cookTime": "40 min",
         "servings": "5",
-        "calories": "(optional)1000",
-        "background": "(TODO)"
+        "calories": "1000",
+        "background": "rgb(121,222,201)"
     }
 }
