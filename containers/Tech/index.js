@@ -26,8 +26,8 @@ const Tech = React.createClass({
 				<h2> Guidelines: </h2>
 				<ol>
 				<li className={styles.listitem}> The page must be a <b>PDF</b> file. </li>
-				<li className={styles.listitem}> The page must have dimensions of <b>21cm x 21cm</b> at a resolution of <b>300 DPI</b> (in pixels: 2480px x 2480px).<br/> </li>
-                <li className={styles.listitem}> The photo must have dimensions of <b>7cm x 7cm</b> at a resolution of <b>300 DPI</b> (in pixels: 827px x 827px).<br/><br/> </li>
+				<li className={styles.listitem}> The page must have dimensions of <b>21cm x 21cm</b> at a resolution of <b>300 DPI</b> (in pixels: 2480px x 2480px).</li>
+                <li className={styles.listitem}> The profile photo must have dimensions of <b>7cm x 7cm</b> at a resolution of <b>300 DPI</b> (in pixels: 827px x 827px).</li>
 				<li className={styles.listitem}> (<b>Note:</b> Your name, office location, bio, and photo will be included in a sidebar beside your page.)</li>
 				<li className={styles.listitem}> The total file size for PDFs and photos must <b>not exceed 5MB</b> each.</li>
 				<li className={styles.listitem}> The content must have a techy piece to it (a puzzle or article).</li>
