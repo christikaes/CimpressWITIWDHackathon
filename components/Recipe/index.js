@@ -56,10 +56,10 @@ const Recipe = React.createClass({
         let picture = {
           "src": json.photoName,
           "style": {
-            "height" : json.dimensions.height,
-            "width" : json.dimensions.width,
-            "top": -json.dimensions.height/2 + placeholderDimensions.height/2,
-            "left": -json.dimensions.width/2 + placeholderDimensions.width/2
+            "height" : Math.round(json.dimensions.height/3.03),
+            "width" : Math.round(json.dimensions.width/3.03),
+            "top": Math.round(-json.dimensions.height/3.03/2 + placeholderDimensions.height/2),
+            "left": Math.round(-json.dimensions.width/2.48/2 + placeholderDimensions.width/2)
           }
         } 
         update(placeholderType, picture);

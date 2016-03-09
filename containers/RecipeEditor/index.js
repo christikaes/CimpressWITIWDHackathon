@@ -33,6 +33,8 @@ const RecipeEditor = React.createClass({
             will look like when we print it (after we do some final checks).
           </p>
           <p>
+            The profile Photo must have dimensions of <b>7cm x 7cm</b> at a resolution of <b>300 DPI</b> (in pixels: 827px x 827px).<br/>
+            The food Photo must have dimensions of <b>21cm x 7cm</b> at a resolution of <b>300 DPI</b> (in pixels: 2480px x 827px).<br/>
             When you are done editing your recipe, fill out the form at the bottom of this page to submit it!
           </p>
 		  <p className={styles.warning}>
