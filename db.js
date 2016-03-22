@@ -3,9 +3,6 @@ var Db = function () {};
 //AWS SDK
 var AWS = require('aws-sdk');
 AWS.config.update({region:'us-west-2'});
-//TODO!!! GET RID OF THIS!!
-AWS.config.update({accessKeyId: 'AKIAIT43DD5C3JZDEGVQ', secretAccessKey: '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'});
-
 
 //MD5 package
 var md5 = require("blueimp-md5"); 
